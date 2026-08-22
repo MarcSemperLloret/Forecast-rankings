@@ -4,9 +4,12 @@ title: "Verification scale reshapes weather-model rankings: reproducibility pack
 type: software
 version: "0.1.0-staging"
 authors:
-  - given-names: "Marc"
-    family-names: "Semper Lloret"
-    email: "marcsemperlloret@gmail.com"
+  - family-names: Semper
+    given-names: Marc
+  - family-names: Curado
+    given-names: Manuel
+  - family-names: Vicent
+    given-names: Jose F.
 repository-code: "TO_BE_ASSIGNED"
 abstract: >-
   Code, frozen derived tables, figure source data and manifests for controlled
