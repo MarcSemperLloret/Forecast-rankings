@@ -1,4 +1,4 @@
-# Verification scale reshapes weather-model rankings
+# Target support reshapes comparative forecast rankings
 
 This is the journal-safe reproducibility companion for the Paper3 analysis. It
 contains analysis code, frozen derived tables, publication figures and their
