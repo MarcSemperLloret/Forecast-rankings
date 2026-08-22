@@ -1,0 +1,25 @@
+{
+  "script_sha256": "5068073b73b70edcb846b4470d4b6ff2047f75d0ea148e42cf22c8b761fa9e9c",
+  "outputs": {
+    "cell_effects.csv": {
+      "bytes": 623259,
+      "sha256": "4cbc24a79b8a6a1c3f533575de69cacb2400a5fdb0592eee29f0e97446117975"
+    },
+    "associations.csv": {
+      "bytes": 1865,
+      "sha256": "0e76e2035d4e1a906e3cdfc34d253778e101d21188850d4d5b3a66815ab8e192"
+    },
+    "quartile_contrasts.csv": {
+      "bytes": 1832,
+      "sha256": "8452ec8a3fa04004de41f61f21f6526a5a235dd007123d18e5ce52cf48e7f71f"
+    },
+    "summary.json": {
+      "bytes": 1986,
+      "sha256": "2048219d6a927ca1779a92d6648044c86be898497dab446789d0e79d096a0066"
+    },
+    "bootstrap_associations.npz": {
+      "bytes": 396540,
+      "sha256": "41577d06b7e9e2b86c62b6b8ae5f959fb2df0aef272b95fa52a6041f6b78d043"
+    }
+  }
+}

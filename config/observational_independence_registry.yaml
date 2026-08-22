@@ -1,0 +1,170 @@
+version: 1
+decision_date: "2026-08-22"
+scope: "candidate station networks for the held-out 2020 instantaneous T2m analysis"
+
+classification:
+  confirmed_independent:
+    description: >-
+      Station-time records proven absent from the ERA5 assimilation input or
+      rejected before assimilation. No candidate currently meets this standard.
+    confirmatory_eligible: true
+  low_risk_candidate:
+    description: >-
+      Non-GTS/non-SYNOP provenance documented and no physical or identifier
+      overlap with Weather5K/ISD. This reduces risk but does not prove absence
+      from every ERA5 input channel.
+    confirmatory_eligible: true
+  potentially_assimilated:
+    description: >-
+      GTS, SYNOP, METAR, MADIS or another operational exchange channel is
+      documented, or the physical site overlaps Weather5K/ISD.
+    confirmatory_eligible: false
+  unknown:
+    description: "Insufficient station-level provenance. Kept out of the primary stratum."
+    confirmatory_eligible: false
+
+matching:
+  physical_radius_km: 1.0
+  elevation_tolerance_m: 30.0
+  identifier_columns: [wmo_id, icao_id, usaf_id, wban_id]
+  operational_report_types: [SYNOP, METAR, GTS, MADIS]
+  # This label is assigned only after documentary evidence that the stream was
+  # not operationally exchanged. A national/internal message name is not proof.
+  low_risk_report_types: [LOCAL_NON_GTS]
+
+networks:
+  avamet:
+    status: low_risk_candidate
+    role: "regional mechanism development and replication; never part of the held-out global verdict"
+    reason: "local network; no documented GTS/SYNOP route in the project provenance"
+    action: "retain as development evidence and require station-level deduplication"
+
+  weather5k_isd:
+    status: potentially_assimilated
+    role: "engineering dry run only"
+    reason: "derived from NOAA ISD, which contains operationally exchanged surface reports"
+    action: "do not promote the completed dry run to confirmatory evidence"
+
+  weather2k:
+    status: unknown
+    role: "China-only sensitivity analysis"
+    reason: >-
+      CMA station observations; published processing linearly interpolates
+      residual missing/default values and the public release exposes no
+      observation-versus-interpolation mask.
+    action: "secondary only; never merge with raw-observation strata"
+    source: "https://proceedings.mlr.press/v206/zhu23a/zhu23a.pdf"
+
+  midas_open_uk:
+    status: unknown
+    role: "first acquisition candidate"
+    reason: >-
+      The archive distinguishes Land SYNOP, NCM and AWSHRLY report families and
+      supplies QC flags. Independence must be assigned per report family and
+      station, not to MIDAS as a whole.
+    include_report_types: [NCM, AWSHRLY]
+    exclude_report_types: [SYNOP, METAR]
+    action: >-
+      Acquire 2020 hourly temperature and metadata; exclude international IDs,
+      then cross-match against Weather5K/ISD before any forecast extraction.
+    source: "https://catalogue.ceda.ac.uk/uuid/d04207b551674c07801b7d4e6d883e50/"
+
+  dwd_urban:
+    status: unknown
+    role: "targeted German sensitivity stratum"
+    reason: >-
+      DWD states that these urban stations are not compliant with the usual WMO
+      climate-data standards because of their siting. That does not establish
+      absence from GTS or every ERA5 input channel. Data are hourly from 2015,
+      but full QC is not complete and local urban exposure limits
+      representativeness.
+    action: >-
+      Download 2020, require acceptable QC level, cross-match against ISD, and
+      obtain a DWD statement about operational dissemination before promotion
+      from unknown. Report separately from standard rural/synoptic stations.
+    source: "https://opendata.dwd.de/climate_environment/CDC/observations_germany/climate_urban/hourly/air_temperature/recent/DESCRIPTION_obsgermany_climate_urban_hourly_tu_recent_en.pdf"
+
+  dwd_standard_hourly:
+    status: potentially_assimilated
+    role: "secondary assimilated stratum"
+    reason: "standard national hourly archive contains stations that may report through SYNOP/GTS"
+    action: "use only after station-level report-route audit; never infer independence from archive name"
+    source: "https://opendata.dwd.de/climate_environment/CDC/observations_germany/climate/hourly/air_temperature/historical/"
+
+  eccc_hourly:
+    status: unknown
+    role: "second acquisition candidate"
+    reason: "official hourly archive is available, but operational exchange status varies by station"
+    action: >-
+      Obtain station operator/type metadata; exclude synoptic, aviation and
+      international-ID sites; cross-match the remainder against ISD.
+    source: "https://climate.weather.gc.ca/"
+
+  knmi_hourly:
+    status: unknown
+    role: "third acquisition candidate"
+    reason: "open hourly automatic-station data; station-level exchange status still requires audit"
+    action: "separate land climate-only sites from SYNOP/airport sites and cross-match against ISD"
+    source: "https://dataplatform.knmi.nl/en/dataset/hourly-in-situ-meteorological-observations-1-0"
+
+  uscrn:
+    status: potentially_assimilated
+    role: "high-quality sensitivity stratum, not independence stratum"
+    reason: "NOAA documents dissemination through MADIS and quality-controlled summaries through GTS"
+    action: "exclude from the conservative primary independent stratum"
+    source: "https://www.ncei.noaa.gov/pub/data/uscrn/documentation/program/USCRN_Data_Management_Plan-September_2012.pdf"
+
+  aemet_hourly:
+    status: unknown
+    role: "pending station-level provenance audit"
+    reason: "national archive status alone does not reveal SYNOP/GTS participation"
+    action: "split by station/report type before acquisition"
+
+  inmet_hourly:
+    status: unknown
+    role: "tropical and southern-subtropical national-network candidate"
+    reason: >-
+      Official 2020 automatic-station archive is hourly, but the national Axxx
+      identifier does not by itself establish whether reports circulated via
+      WMO WIS/GTS.
+    action: >-
+      Keep non-overlapping sites as unknown until INMET or ECMWF provenance
+      separates locally retained automatic reports from SYNOP/GTS reports.
+    source: "https://portal.inmet.gov.br/dados-historicos/ano-2020-autom%C3%A1tica"
+
+  met_norway_frost:
+    status: unknown
+    role: "northern-extratropical and complex-terrain candidate"
+    reason: >-
+      Frost exposes WMO and ICAO metadata, which permits removal of clearly
+      operational stations, but absence of those identifiers is not direct
+      proof of absence from every ERA5 input stream.
+    action: >-
+      Acquire 2020 hourly air temperature after a Frost client ID is supplied;
+      exclude WMO/ICAO sites and cross-match the remainder against ISD.
+    source: "https://frost.met.no/howto.html"
+
+  niwa_climate_station:
+    status: unknown
+    role: "southern-hemisphere maritime and complex-terrain candidate"
+    reason: >-
+      NIWA/Earth Sciences New Zealand provides UTC 10-minute climate-station
+      data, but account-specific licence acceptance is required and station
+      dissemination routes still need classification.
+    action: >-
+      After the user obtains DataHub credentials and accepts the applicable
+      licence, select non-METAR stations and cross-match them against ISD.
+    source: "https://niwa.co.nz/climate-and-weather/climate-data/national-climate-database/climate-station-raw-data-10-min"
+
+  jma_amedas:
+    status: unknown
+    role: "East Asian dense-network candidate"
+    reason: >-
+      AMeDAS contains a dense local observing system, but JMA also uses AMeDAS
+      operationally and the public metadata do not identify which reports, if
+      any, reached ERA5 through WMO WIS/GTS.
+    action: >-
+      Build the 2020 station inventory, exclude physical/identifier overlaps,
+      and obtain a documented bulk historical route plus dissemination audit
+      before observation extraction.
+    source: "https://www.jma.go.jp/jma/en/Activities/amedas/amedas.html"

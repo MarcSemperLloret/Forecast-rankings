@@ -1,0 +1,1 @@
+Four-panel figure. Panels a and b show changes in RMSE after smoothing unchanged forecasts in Brazil and the United Kingdom. ERA5 curves initially decline while station curves are minimized at zero smoothing. Panels c and d connect the station optimum at zero to ERA5 optima of 12.5 or 25 km for every model and both MAE and RMSE.

@@ -1,0 +1,13 @@
+{
+  "analysis_role": "transparent negative model-family boundary figure",
+  "inputs": {
+    "results/weather5k_model_family_native_analysis_2020/model_metrics.csv": "784215c68fa8eb026f6ca1365d7cd309a9f65621664ff5c3b1b9b3e301608e6d",
+    "results/weather5k_model_family_native_analysis_2020/slopes.csv": "8afb23d964d2a34b2c5cd99881c560cb711503a00362004fbd8623a890a873b6",
+    "results/weather5k_model_family_analysis_2020/slopes.csv": "65fe3ca6c93751724d4b7fc11ab5fbb025383c02a2cf7460d1fab0e682cfeeea"
+  },
+  "outputs": {
+    "model_family_scale_boundary.png": "b0b51b8201e4eb6cdbc7f4600938f452bff7396007dcfa81dcc6f43379f87bb8",
+    "model_family_scale_boundary.pdf": "bf134ca86f203bb0044941b79aa1abdde63c746c68960264af989f18c03a2b7f",
+    "model_family_scale_boundary_source_data.csv": "36d4d9b95e41f2ad832c976054c47f6dc41f16bc329a4d73fe24f13f5368259d"
+  }
+}

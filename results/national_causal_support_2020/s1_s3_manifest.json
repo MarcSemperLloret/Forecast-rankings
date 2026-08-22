@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-08-22T04:32:56.830599+00:00",
+  "config": {
+    "path": "config\\national_causal_extension_2020.yaml",
+    "sha256": "eed73a93c5a11a3903ba825766a231efb1e63e7b33fa891ea45246fa7023f754"
+  },
+  "script_sha256": "8ea1c6461cf45fd711825886a171f7ddbffc5d65d974155fae1bbcba2be7963f",
+  "input": {
+    "path": "data\\interim\\national_causal_smoothing_2020\\blurred_panel.parquet",
+    "sha256": "4507219547af7e9735391bcfa4062951bc43165acf31dd5f3881aeb4b2da447e"
+  },
+  "uncertainty": {
+    "unit": "ordered valid day",
+    "method": "paired circular moving-block bootstrap",
+    "block_days": [
+      1,
+      3,
+      5,
+      7
+    ],
+    "primary_block_days": 7,
+    "n_resamples": 2000,
+    "confidence": 0.95,
+    "seed": 20260815
+  },
+  "outputs": {
+    "s1_smoothing_curves.csv": {
+      "bytes": 41235,
+      "sha256": "9f09d3f3557951bae7452c7c8715a8ef7c30f88a15ae9340b455d7c376604af1"
+    },
+    "s1_smoothing_changes.csv": {
+      "bytes": 154245,
+      "sha256": "a3275be46e8c9c8ca1e74bef0d2f3dacda88604d935763bea4785cf6fa3fc220"
+    },
+    "s3_mse_decomposition.csv": {
+      "bytes": 16630,
+      "sha256": "b59a1a0ad8583d6b9bbaa6be8f2b38ed7ad8f45b7908f3828a8590e3a0bb55dc"
+    },
+    "s1_s3_summary.json": {
+      "bytes": 6342,
+      "sha256": "d11ec88414ca6a55ba4bc2a79569e00142dc8dd7966a02dc4fad977520bc8725"
+    }
+  }
+}

@@ -1,0 +1,113 @@
+pilot_name: "weather5k_model_family_extension_2020"
+analysis_role: "prospective_model_family_extension_not_a_replacement_for_national_causal_tests"
+
+observations:
+  path: "data/interim/weather5k_t2m_dry_run_2020/observations.parquet"
+  manifest: "data/interim/weather5k_t2m_dry_run_2020/manifest.json"
+
+weatherbench2:
+  specification_config: "config/regional_t2m_2020.yaml"
+  cache: "data/raw/weatherbench2_cache"
+  lead_hours: 24
+  reference: "era5_1p5deg"
+  common_grid_degrees: 1.5
+  regridding: "WeatherBench2 first-order conservative"
+  reference_spec:
+    path: "gs://weatherbench2/datasets/era5/1959-2023_01_10-6h-240x121_equiangular_with_poles_conservative.zarr"
+    time_name: "time"
+    latitude_name: "latitude"
+    longitude_name: "longitude"
+    t2m_name: "2m_temperature"
+  model_specs:
+    era5_forecast_1p5deg:
+      path: "gs://weatherbench2/datasets/era5-forecasts/2020-240x121_equiangular_with_poles_conservative.zarr"
+      time_name: "time"
+      lead_name: "prediction_timedelta"
+      latitude_name: "latitude"
+      longitude_name: "longitude"
+      t2m_name: "2m_temperature"
+    graphcast_era5_1p5deg:
+      path: "gs://weatherbench2/datasets/graphcast/2020/date_range_2019-11-16_2021-02-01_12_hours-240x121_equiangular_with_poles_conservative.zarr"
+      time_name: "time"
+      lead_name: "prediction_timedelta"
+      latitude_name: "latitude"
+      longitude_name: "longitude"
+      t2m_name: "2m_temperature"
+    pangu_era5_1p5deg:
+      path: "gs://weatherbench2/datasets/pangu/2018-2022_0012_240x121_equiangular_with_poles_conservative.zarr"
+      time_name: "time"
+      lead_name: "prediction_timedelta"
+      latitude_name: "latitude"
+      longitude_name: "longitude"
+      t2m_name: "2m_temperature"
+    fuxi_1p5deg:
+      path: "gs://weatherbench2/datasets/fuxi/2020-240x121_equiangular_with_poles_conservative.zarr"
+      time_name: "time"
+      lead_name: "prediction_timedelta"
+      latitude_name: "latitude"
+      longitude_name: "longitude"
+      t2m_name: "2m_temperature"
+    gencast_mean_1p5deg:
+      path: "gs://weatherbench2/datasets/gencast/2020-240x121_equiangular_with_poles_conservative_mean.zarr"
+      time_name: "time"
+      lead_name: "prediction_timedelta"
+      latitude_name: "latitude"
+      longitude_name: "longitude"
+      t2m_name: "2m_temperature"
+  sources:
+    - {model: era5_forecast_1p5deg, family: ifs, cohort: era5_initialised_deterministic_1p5deg}
+    - {model: graphcast_era5_1p5deg, family: graphcast, cohort: era5_initialised_deterministic_1p5deg}
+    - {model: pangu_era5_1p5deg, family: pangu, cohort: era5_initialised_deterministic_1p5deg}
+    - {model: fuxi_1p5deg, family: fuxi, cohort: era5_initialised_deterministic_1p5deg}
+    - {model: gencast_mean_1p5deg, family: gencast, cohort: era5_initialised_ensemble_mean_1p5deg}
+
+execution:
+  workers: 4
+  output_root: "data/interim/weather5k_model_family_extension_2020"
+
+roughness:
+  scales_km: [300, 600, 1200]
+  primary_scale_km: 600
+  output_root: "data/interim/weather5k_model_family_roughness_2020"
+  definition: "RMS departure from an area-weighted geodesic Gaussian mean"
+
+prespecification:
+  frozen_utc: "2026-08-22"
+  common_support_rule: >-
+    Every source and ERA5 must be present at the same station-valid times; FuXi
+    determines the prospective common temporal support and no missing dates are
+    filled.
+  primary_cohort: "era5_initialised_deterministic_1p5deg"
+  primary_models: [era5_forecast_1p5deg, graphcast_era5_1p5deg, pangu_era5_1p5deg, fuxi_1p5deg]
+  sensitivity_models: [gencast_mean_1p5deg]
+  primary_metrics: [mae, rmse]
+  weighting: "frozen equal-area WEATHER-5K cells; unweighted stations reported secondarily"
+  family_unit_rule: >-
+    A named architecture is one family. Re-initialisations, versions and
+    ensemble statistics never create extra independent family units.
+  success_rule: >-
+    The extension supports mechanistic breadth only if the deterministic-cohort
+    slope from field roughness to gridded-reference advantage is positive for
+    MAE and RMSE at the primary 600-km scale, remains positive at 300 and 1200
+    km, and the separately labelled GenCast ensemble-mean sensitivity does not
+    reverse the sign of the gridded-reference advantage. Rank reversals are
+    reported but are not required, and the extension cannot by itself establish
+    causal or assimilation-independent confirmation.
+
+licensing:
+  use: "non-commercial academic research"
+  weather5k: "CC BY-NC 4.0 per existing input manifest"
+  fuxi_model_materials: "CC BY-NC-SA 4.0 per official distribution"
+  gencast_model_weights: "CC BY-NC-SA 4.0 per official Google DeepMind repository"
+  bucket_audit: >-
+    No dataset-specific LICENSE object was exposed at the immediate public FuXi
+    or GenCast prefixes on 2026-08-22; retain research-only handling and verify
+    redistribution terms again before any public data release.
+
+interpretation:
+  independent_named_families_across_programme: 5
+  deterministic_primary_families_here: 4
+  warning: >-
+    GenCast is an ensemble mean and is not pooled into the deterministic rank or
+    slope. This extension broadens model families on a common coarse grid; the
+    national 0.25-degree controlled-smoothing tests remain the causal evidence.

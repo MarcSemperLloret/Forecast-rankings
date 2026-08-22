@@ -1,0 +1,13 @@
+{
+  "analysis_role": "main Figure 2; frozen national controlled-smoothing intervention",
+  "inputs": {
+    "results/national_causal_support_2020/s1_smoothing_changes.csv": "a3275be46e8c9c8ca1e74bef0d2f3dacda88604d935763bea4785cf6fa3fc220",
+    "results/national_causal_support_2020/s1_s3_summary.json": "d11ec88414ca6a55ba4bc2a79569e00142dc8dd7966a02dc4fad977520bc8725"
+  },
+  "outputs": {
+    "main_figure2_controlled_smoothing.png": "247a5754517f6661fed4c59a62c35079d1e5b62c20d917792cc1a02a71523be9",
+    "main_figure2_controlled_smoothing.pdf": "bf5f483152113272288196f001457ac91eb91c1ffb63c273934adaf3b8184699",
+    "panels_ab_source_data.csv": "b0327cace94c3d50c9745bade4efd16ea254c30b04aefaeae996a3c14ebb97e7",
+    "panels_cd_source_data.csv": "fb78a24c2545cfca865718163822d7792a4da30f07f33f2387eba4f01b2e544c"
+  }
+}

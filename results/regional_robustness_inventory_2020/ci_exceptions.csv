@@ -1,0 +1,2 @@
+design,source,lead_h,stratum_type,stratum,block_days,n_common_cases,n_stations,n_daily_blocks,avamet_winner,era5_winner,p_winners_differ,primary_pair,primary_effect_c,primary_effect_ci_low_c,primary_effect_ci_high_c,primary_pair_reversal_probability,effect_negative,ci_excludes_zero
+spatial strata,results/spatial_t2m_2020/spatial_robustness.csv,72,altitude_stratum,altitude_low,5,34315,49,361,graphcast_hres_init,graphcast_hres_init,0.075,graphcast_hres_init__minus__pangu_hres_init,-0.0283618022112347,-0.0568438924783351,0.0003632765059028,0.075,True,False

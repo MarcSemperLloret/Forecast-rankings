@@ -1,0 +1,94 @@
+analysis_name: "national_causal_support_extension_2020"
+analysis_role: >-
+  Prospective national-network extension frozen after inspecting station
+  geometry and before calculating any national controlled-smoothing or
+  reference-support outcome.
+created_local_date: "2026-08-22"
+
+inputs:
+  panel: "data/interim/national_unknown_combined_weatherbench2_2020/panel.parquet"
+  model_specification: "config/regional_t2m_2020.yaml"
+  model_sources: "config/midas_unknown_weatherbench2_2020.yaml"
+  weatherbench2_cache: "data/raw/weatherbench2_cache"
+
+scope:
+  variable: "2m_temperature"
+  year: 2020
+  lead_hours: 24
+  networks: [midas, inmet]
+  primary_models: [ifs_hres, graphcast_hres_init, pangu_hres_init]
+  extension_models: [era5_forecast, graphcast_era5, pangu_era5, ifs_ens_mean]
+  references: [era5, station]
+
+controlled_smoothing_s1:
+  sigma_km: [0, 12.5, 25, 50, 100]
+  kernel: "geodesically isotropic Gaussian, area weighted, truncated at 4 sigma"
+  metrics: [mae, rmse, centred_rmse]
+  primary_metric: "mae"
+  confirmatory_metric: "rmse"
+  success_per_network: >-
+    At least two of the three primary models have an optimum at sigma > 0
+    against ERA5 and at sigma = 0 against stations, in both MAE and RMSE.
+  strong_success: >-
+    The per-network success rule holds in MIDAS and INMET and no primary model
+    moves both references in the same direction at every positive sigma.
+  refutation: >-
+    In either network a majority of primary models moves ERA5 and station
+    scores in the same direction, or the station optimum is positive for a
+    majority in both MAE and RMSE.
+
+reference_support_s2:
+  minimum_stations_per_positive_radius: 3
+  minimum_centres_for_inference: 10
+  exact_preregistered_radii_km: [0, 25, 50, 100]
+  prospective_common_radii_km: [0, 50, 100, 200]
+  geometry_reason_for_extension: >-
+    Before causal scores were inspected, the 25 km density gate retained 15
+    MIDAS centres and only 5 INMET centres. At 50 km it retained 71 MIDAS and
+    37 INMET centres. The 50/100/200 km ladder is therefore a prospective,
+    network-compatible extension and never replaces the exact preregistered
+    0/25/50/100 km result.
+  weightings: [uniform, gaussian]
+  gaussian_sigma: "radius / 2"
+  thinning_stations: 3
+  thinning_draws: 60
+  metrics: [mae, rmse]
+  primary_models: [ifs_hres, graphcast_hres_init, pangu_hres_init]
+  success_per_network: >-
+    Mean Spearman correlation between support radius and optimal smoothing is
+    positive across primary models for uniform, Gaussian and fixed-count
+    thinning analyses, with at least two of three model-specific correlations
+    positive for MAE and RMSE.
+  density_gate: >-
+    A ladder with fewer than 10 eligible centres is reported as a geometry
+    failure and is not interpreted inferentially.
+
+decomposition_s3:
+  identity: "MSE = bias^2 + centred error variance"
+  prediction: >-
+    Improvement against ERA5 after smoothing is primarily a reduction in the
+    centred-error component, not an improvement in squared bias.
+
+uncertainty:
+  unit: "ordered valid day"
+  method: "paired circular moving-block bootstrap"
+  block_days: [1, 3, 5, 7]
+  primary_block_days: 7
+  n_resamples: 2000
+  confidence: 0.95
+  seed: 20260815
+
+outputs:
+  blurred_panel: "data/interim/national_causal_smoothing_2020/blurred_panel.parquet"
+  materialisation_root: "data/interim/national_causal_smoothing_2020"
+  results_root: "results/national_causal_support_2020"
+
+interpretation:
+  permitted_if_strong_success: >-
+    The causal dependence of model evaluation on reference support generalises
+    from AVAMET to two national observing networks.
+  forbidden_without_documentary_independence: >-
+    Fully ERA5-independent global confirmation.
+  shared_limit: >-
+    MIDAS and INMET stations have no Weather5K/ISD overlap in the selected
+    stratum, but their complete ERA5 assimilation routes remain undocumented.

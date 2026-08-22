@@ -1,0 +1,444 @@
+# Regional confirmation stage. Separate from the completed Q1 pilot so data-
+# producing choices remain auditable.
+pilot_name: "regional_t2m_2020"
+period:
+  init_start: "2020-01-01T00:00:00"
+  init_end: "2020-12-31T12:00:00"
+  cycles_utc: [0, 12]
+leads_hours: [24]
+variables: [t2m]
+stations:
+  n: 40
+  min_exact_utc_samples: 650
+  selection_seed: 20260815
+  selection_method: "coverage_then_maximin_lat_lon_alt"
+avamet:
+  archive_glob: "../../downbursts-cv-pilot/data/processed/avamet/archive/development/year=2020/*/*.parquet"
+  timezone: "UTC"
+  t2m_plausible_c: [-20.0, 50.0]
+  qc:
+    rolling_window_reports: 5
+    local_median_deviation_c: 4.0
+bootstrap:
+  unit: "valid_day"
+  n_resamples: 2000
+  seed: 20260815
+  ci: 0.95
+lead_time_extension:
+  # Pre-specified robustness family.  Lead 24 reuses the completed annual
+  # panel; the remaining leads are materialised in resumable quarterly batches.
+  leads_hours: [24, 48, 72, 120, 168]
+  additional_leads_hours: [48, 72, 120, 168]
+  bootstrap_block_days: [1, 3, 5, 7]
+  primary_pair: [graphcast_hres_init, pangu_hres_init]
+surface_variable_extension:
+  # Separate exploratory variable cohorts at +24 h.  AVAMET semantics are
+  # retained in the label so that they are never mistaken for a reanalysis.
+  lead_hours: 24
+  variables:
+    mslp:
+      label: "AVAMET reported pressure versus model mean-sea-level pressure (exploratory)"
+      model_variable: "mean_sea_level_pressure"
+      era5_variable: "mean_sea_level_pressure"
+      avamet_column: "pressure_hpa"
+      output_name: "mslp_hpa"
+      unit: "hPa"
+      model_scale: 0.01
+      avamet_scale: 1.0
+      avamet_qc:
+        plausible_range: [800.0, 1100.0]
+        offline_sentinel: true
+    wind10m:
+      label: "AVAMET published mean wind speed versus model 10 m wind speed (exploratory; averaging window unverified)"
+      model_variable: "10m_wind_speed"
+      era5_components: ["10m_u_component_of_wind", "10m_v_component_of_wind"]
+      avamet_column: "wind_mean_kmh"
+      output_name: "wind10m_ms"
+      unit: "m s-1"
+      model_scale: 1.0
+      avamet_scale: 0.2777777777777778
+      avamet_qc:
+        plausible_range: [0.0, 200.0]
+        offline_sentinel: true
+spatial_replication:
+  # A post-pilot robustness cohort: every station passing the same availability
+  # screen is retained. It never replaces the frozen 40-station primary panel.
+  leads_hours: [24, 48, 72]
+  altitude_strata: 3
+  coast_threshold_km: 25.0
+  coastline:
+    # Natural Earth 1:10m physical coastline, public-domain release.
+    url: "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/v5.1.2/geojson/ne_10m_coastline.geojson"
+    version: "Natural Earth v5.1.2, 1:10m coastline"
+  bootstrap_block_days: [1, 3, 5, 7]
+  primary_pair: [graphcast_hres_init, pangu_hres_init]
+temporal_replication:
+  # A deliberately separate, two-model sensitivity: GraphCast-HRES is not
+  # available in these calendar-year stores and is not silently substituted.
+  years: [2021, 2022]
+  leads_hours: [24]
+  models: [ifs_hres, pangu_hres_init]
+  bootstrap_block_days: [1, 3, 5, 7]
+  # 2020 is scored with the same two models so that the three years are read on
+  # one axis.  It reuses the frozen annual panel; nothing is re-extracted, and
+  # the three-model cohort of 2020 keeps its own separate results.
+  baseline_year: 2020
+  baseline_panel: "data/interim/aligned_t2m_regional_2020.parquet"
+  station_table: "data/processed/stations_regional_t2m_2020.csv"
+  avamet_archive_glob: "../../downbursts-cv-pilot/data/processed/avamet/archive/development/year={year}/*/*.parquet"
+  pangu_path_template: "gs://weatherbench2/datasets/pangu_hres_init/{year}_0012_0p25.zarr"
+orography_sensitivity:
+  # Post-pilot representativeness sensitivity. WeatherBench HRES stores do not
+  # expose static surface geopotential; ERA5 terrain is used as a common-grid
+  # proxy after coordinate equality is checked, never as model-specific terrain.
+  terrain_source: "era5_geopotential_at_surface"
+  gravity_m_s2: 9.80665
+  abs_delta_z_thresholds_m: [50.0, 100.0, 200.0]
+  lapse_rates_k_per_km: [5.0, 6.5, 8.0]
+metric_and_spatial_uncertainty_extension:
+  # Post-pilot robustness family. MAE remains primary; other scores explain
+  # whether ranking changes reflect scale, bias, or tail sensitivity.
+  metrics: [mae, rmse, bias, medae]
+  spatial_block_degrees: [0.5, 1.0]
+  temporal_block_days: [1, 3, 5, 7]
+  primary_pair: [graphcast_hres_init, pangu_hres_init]
+daily_resolution_degradation:
+  # Feasibility for the daily station archives (GHCN-Daily, GSOD, ECA&D), which
+  # hold no instantaneous values. The comparison is degraded on purpose to daily
+  # maxima and minima sampled every 6 h, in the one domain where the
+  # instantaneous answer is already known. AVAMET reports sub-hourly, so the
+  # sampling bias of a four-point maximum can be measured against the real one
+  # instead of assumed.
+  #
+  # Only the 00 UTC cycle gives a window inside a single UTC day, so the family
+  # is restricted to it. A UTC day is not the local observation window that the
+  # daily archives use; that mismatch is the next question, not this one.
+  window_leads_hours: [24, 30, 36, 42]
+  init_cycle_utc: 0
+  quantities: [tmax, tmin]
+  primary_pair: [graphcast_hres_init, pangu_hres_init]
+  bootstrap_block_days: [1, 3, 5, 7]
+controlled_smoothing:
+  # The causal counterpart of `field_smoothness`, which can only show an
+  # association between fields and scores. Here one forecast is degraded on
+  # purpose at several widths and re-scored against both references, so nothing
+  # varies except how much small-scale structure the field retains.
+  #
+  # Declared before running: smoothing must move the two references in opposite
+  # directions. Against the reanalysis the degraded field should score better,
+  # or at least stop getting worse; against the stations it should get worse
+  # throughout. Both moving the same way would refute the whole reading.
+  lead_hours: 24
+  sigma_km: [0, 12.5, 25, 50, 100]
+  models: [ifs_hres, graphcast_hres_init, pangu_hres_init]
+  bootstrap_block_days: [1, 3, 5, 7]
+spatial_weighting:
+  # How the world is weighted, fixed before the global archive exists. With one
+  # weight per station, the United States and Europe would dominate the result
+  # through network density rather than through anything physical.
+  #
+  # Sites are aggregated inside cells of an approximately equal-area
+  # tessellation, and the cells carry equal weight. A plain latitude-longitude
+  # grid would not do: its cells shrink towards the poles by cos(latitude).
+  tessellation: "equal_area_latitude_bands"
+  target_cell_km: 100.0
+  min_sites_per_cell: 1
+  # Cells must be the same set for every model, so that no model is scored on a
+  # different piece of the world than another.
+  require_common_cells: true
+  # Reported alongside as a secondary, so the difference between weighting the
+  # world and weighting the network is visible rather than assumed.
+  report_unweighted_station_mean: true
+station_deduplication:
+  # Policy for collapsing records that describe the same physical site. Written
+  # before the global archive exists, because GHCN, GSOD and ECA&D overlap by
+  # construction and a site published by three of them would otherwise count
+  # three times.
+  #
+  # Records are not deleted: they are collapsed into a site whose observation is
+  # the mean of its members. Deduplication happens during archive preparation,
+  # so every downstream count — cells, ladder centres, minima — counts sites.
+  merge_radius_km: 1.0
+  merge_elevation_tolerance_m: 30.0
+  identifier_match_wins: true
+  # 1 km is the coordinate rounding of the coarsest archive in the set, so a
+  # smaller radius would miss true duplicates whose metadata is simply coarse.
+  # 30 m is the usual precision of elevation metadata and, at a 6.5 K/km lapse
+  # rate, about 0.2 °C: below the effect being measured. A pair closer than the
+  # radius but differing by more than the tolerance is NOT merged, because a
+  # valley floor and a slope 300 m apart are genuinely different sites and
+  # merging them would destroy the subgrid structure this work is about.
+  network_priority: [dwd, eccc, aemet, knmi, inmet, avamet, ndbc, tao, nerrs, ecad, ghcn_daily, gsod]
+  # Networks whose observations plausibly enter the stream ERA5 assimilates. A
+  # site inherits the flag if ANY of its members belongs to one of these, which
+  # is the conservative direction for a predicted-null stratification.
+  assimilated_networks: [dwd, eccc, aemet, knmi, inmet, ndbc, tao, ghcn_daily, gsod, ecad]
+mechanism_replication:
+  # Temporal replication of the two central mechanism results, declared in
+  # docs/PREREGISTRO_FASE_GLOBAL.md before being run. Both available years are
+  # used, so no year can be chosen for its outcome. GraphCast-HRES-init is not
+  # published for them and is not substituted; both results are per-model, so
+  # its absence shrinks the sample without invalidating the design.
+  years: [2021, 2022]
+  models: [ifs_hres, pangu_hres_init]
+  lead_hours: 24
+  avamet_archive_glob: "../../downbursts-cv-pilot/data/processed/avamet/archive/development/year={year}/*/*.parquet"
+  pangu_path_template: "gs://weatherbench2/datasets/pangu_hres_init/{year}_0012_0p25.zarr"
+reference_support_ladder:
+  # Generalises the controlled degradation. If the reanalysis rewards blurred
+  # fields because it is an areal quantity and a station is a point, then the
+  # scale of the reference, not its identity, is what sets the reward. AVAMET is
+  # dense enough to build observational references of growing spatial support
+  # and repeat the blurring experiment against each of them.
+  #
+  # Prediction declared before running: the optimal blur grows with the support
+  # of the reference. A flat optimum would say the reward comes from something
+  # specific to the reanalysis rather than from its scale.
+  support_radii_km: [0, 25, 50, 100]
+  min_stations_per_support: 3
+  projection: "EPSG:25830"
+  bootstrap_block_days: [1, 7]
+  # Three controls, because the obvious objection to the ladder is that a wider
+  # radius simply holds more stations. Uniform and distance-weighted averages
+  # test the shape of the aggregation; the thinning holds the station count
+  # fixed at every radius, so only the area covered grows. If the optimum still
+  # climbs under thinning, it climbs because of area and not because of sample
+  # size.
+  weightings: [uniform, gaussian]
+  thinning_stations: 3
+  thinning_draws: 60
+field_smoothness:
+  # Turns the unifying hypothesis into a measurement: the gridded reference is
+  # suspected of favouring the smoother member of every pair. Smoothness is
+  # measured on the fields themselves, over the domain the stations occupy, and
+  # confronted with the reference effects already measured for seven pairs.
+  lead_hours: 24
+  domain_padding_deg: 1.0
+  # Widths in kilometres, not in cells.  Every source sits on the same grid, so
+  # cells would convert identically, but a window in cells is anisotropic at
+  # this latitude: three cells span 83 km north-south and 65 km east-west. An
+  # ordering that survives only one width is not an ordering, so three are
+  # reported and the middle one is primary.
+  scales_km: [25, 50, 100]
+  primary_scale_km: 50
+  sources: [ifs_hres, graphcast_hres_init, pangu_hres_init, era5_forecast, graphcast_era5,
+            pangu_era5, ifs_ens_mean, era5]
+diurnal_cycle_extension:
+  # Post-pilot family that separates the initialisation cycle from the hour the
+  # forecast is valid at.  At any lead that is a multiple of 24 h the two are the
+  # same thing: init 00 is always verified at 00 UTC.  Lead 36 h swaps them, and
+  # it sits between the two bracket leads already materialised, so the pure lead
+  # dependence can be read off the bracket and the departure at 36 h attributed
+  # to the valid hour.  The departure must change sign between cycles if it is
+  # the hour that matters; the same sign in both would be a lead effect.
+  crossed_lead_hours: 36
+  bracket_leads_hours: [24, 48]
+  cycles_utc: [0, 12]
+  primary_pair: [graphcast_hres_init, pangu_hres_init]
+  bootstrap_block_days: [1, 3, 5, 7]
+day_regime_strata:
+  # Post-pilot family on the day axis.  The mechanism family showed the effect
+  # is ordered by the signed discrepancy between references across stations;
+  # this asks whether it is also ordered by that discrepancy across days. Both
+  # the quantile strata and the continuous relation are reported, because a
+  # monotone table and a rank correlation answer the question differently.
+  leads_hours: [24, 48, 72]
+  primary_lead_hours: 24
+  primary_pair: [graphcast_hres_init, pangu_hres_init]
+  n_quantiles: 4
+  bootstrap_block_days: [1, 3, 5, 7]
+  regimes:
+    era5_minus_avamet_mean_c: "Diferencia media ERA5 − AVAMET del día (°C)"
+    era5_minus_avamet_rmse_c: "RMSE ERA5 − AVAMET del día (°C)"
+    avamet_network_mean_t2m_c: "Temperatura media de la red (°C)"
+    avamet_spatial_sd_c: "Variabilidad espacial de AVAMET (°C)"
+leave_one_region_out:
+  # Post-pilot family that makes the spatial bootstrap interpretable: instead of
+  # asking how much the effect moves under abstract spatial resampling, it names
+  # the region whose removal moves it. Partitions are geometric and fixed by
+  # seed, never drawn around an outcome.
+  leads_hours: [24, 48, 72]
+  primary_lead_hours: 24
+  primary_partition: "kmeans_10"
+  primary_pair: [graphcast_hres_init, pangu_hres_init]
+  bootstrap_block_days: [1, 3, 5, 7]
+  projection: "EPSG:25830"
+  kmeans_seed: 20260815
+  partitions:
+    kmeans_10: {method: "kmeans", clusters: 10}
+    kmeans_8: {method: "kmeans", clusters: 8}
+    kmeans_15: {method: "kmeans", clusters: 15}
+    grid_1deg: {method: "grid_blocks", degrees: 1.0}
+station_effect_drivers:
+  # Post-pilot mechanism family.  It asks where a gridded reference alters the
+  # relative evaluation most, not whether it does.  The relation is descriptive:
+  # the covariates are listed here before any of them is inspected, and none is
+  # selected by its outcome.
+  leads_hours: [24, 48, 72]
+  primary_lead_hours: 24
+  primary_pair: [graphcast_hres_init, pangu_hres_init]
+  bootstrap_block_days: [1, 3, 5, 7]
+  covariates:
+    era5_minus_avamet_rmse_c: "RMSE ERA5 − AVAMET (°C)"
+    era5_minus_avamet_bias_c: "Sesgo medio ERA5 − AVAMET (°C)"
+    delta_z_m: "Δz estación − orografía ERA5 (m)"
+    abs_delta_z_m: "|Δz| estación − orografía ERA5 (m)"
+    altitude_m: "Altitud de la estación (m)"
+    coast_distance_km: "Distancia a la costa (km)"
+    avamet_mean_t2m_c: "Temperatura media observada (°C)"
+    avamet_sd_t2m_c: "Variabilidad temporal observada (°C)"
+    avamet_contrast_12_minus_00_c: "Contraste 12−00 UTC observado (°C)"
+    stations_in_cell: "Estaciones AVAMET en la celda ERA5"
+  # The figure carries every covariate whose panel is readable as a scatter, so
+  # that a weak relation is as visible as a strong one.
+  figure_covariates: [era5_minus_avamet_rmse_c, era5_minus_avamet_bias_c, delta_z_m, abs_delta_z_m,
+                      altitude_m, avamet_mean_t2m_c, avamet_sd_t2m_c, coast_distance_km]
+representativeness_extension:
+  # Post-pilot point-to-grid family.  AVAMET is dense enough to build an
+  # observational aggregate on the ERA5 grid, so the comparison becomes
+  # grid-to-area instead of grid-to-point.  The model value in a cell is the
+  # grid-point value, which is also the nearest-neighbour station value: one
+  # cached-field pass therefore serves both the aggregation and the
+  # interpolation sensitivity.  Declared before any of its results exist.
+  cohort: "spatial_replication_all_eligible"
+  leads_hours: [24, 48, 72]
+  primary_lead_hours: 24
+  grid_resolution_deg: 0.25
+  interpolations: [bilinear, nearest]
+  min_cell_stations_for_aggregate: 2
+  station_density_strata:
+    single_station: [1, 1]
+    sparse_2_3: [2, 3]
+    dense_4_plus: [4, 1000]
+  bootstrap_block_days: [1, 3, 5, 7]
+  primary_pair: [graphcast_hres_init, pangu_hres_init]
+download:
+  max_workers: 4
+  # Batches are independently materialised and can be rerun safely.
+  batches:
+    q1: ["2020-01-01T00:00:00", "2020-03-31T12:00:00"]
+    q2: ["2020-04-01T00:00:00", "2020-06-30T12:00:00"]
+    q3: ["2020-07-01T00:00:00", "2020-09-30T12:00:00"]
+    q4: ["2020-10-01T00:00:00", "2020-12-31T12:00:00"]
+paths:
+  stations_csv: "data/processed/stations_regional_t2m_2020.csv"
+  station_selection_json: "data/processed/stations_regional_t2m_2020_summary.json"
+  batch_directory: "data/interim/regional_t2m_2020_batches"
+  annual_aligned_parquet: "data/interim/aligned_t2m_regional_2020.parquet"
+  model_extension_directory: "data/interim/model_extensions"
+  availability_directory: "results/regional_t2m_2020_availability"
+  lead_time_directory: "data/interim/lead_time_t2m_2020"
+  lead_time_results_directory: "results/lead_time_t2m_2020"
+  surface_variable_directory: "data/interim/surface_variables_2020"
+  surface_variable_results_directory: "results/surface_variables_2020"
+  spatial_stations_csv: "data/processed/stations_spatial_t2m_2020.csv"
+  spatial_station_selection_json: "data/processed/stations_spatial_t2m_2020_summary.json"
+  coastline_geojson: "data/raw/geography/ne_10m_coastline_v5.1.2.geojson"
+  spatial_directory: "data/interim/spatial_t2m_2020"
+  spatial_results_directory: "results/spatial_t2m_2020"
+  temporal_directory: "data/interim/temporal_ifs_pangu"
+  temporal_results_directory: "results/temporal_ifs_pangu"
+  station_grid_elevation_csv: "data/processed/station_grid_elevation_era5_025.csv"
+  orography_results_directory: "results/orography_sensitivity_2020"
+  metric_and_spatial_results_directory: "results/metric_and_spatial_uncertainty_2020"
+  representativeness_directory: "data/interim/representativeness_2020"
+  representativeness_results_directory: "results/representativeness_2020"
+  station_effect_driver_results_directory: "results/station_effect_drivers_2020"
+  leave_one_region_out_results_directory: "results/leave_one_region_out_2020"
+  day_regime_results_directory: "results/day_regime_strata_2020"
+  diurnal_cycle_results_directory: "results/diurnal_cycle_2020"
+  daily_degradation_results_directory: "results/daily_degradation_2020"
+  field_smoothness_results_directory: "results/field_smoothness_2020"
+  controlled_smoothing_results_directory: "results/controlled_smoothing_2020"
+  reference_support_results_directory: "results/reference_support_2020"
+  mechanism_replication_results_directory: "results/mechanism_replication"
+  station_grid_cells_csv: "data/processed/station_era5_cells_025.csv"
+weatherbench2:
+  storage_options:
+    token: "anon"
+  models:
+    ifs_hres:
+      path: "gs://weatherbench2/datasets/hres/2016-2022-0012-1440x721.zarr"
+      time_name: "time"
+      lead_name: "prediction_timedelta"
+      latitude_name: "latitude"
+      longitude_name: "longitude"
+      t2m_name: "2m_temperature"
+    graphcast_hres_init:
+      path: "gs://weatherbench2/datasets/graphcast_hres_init/2020/date_range_2019-11-16_2021-02-01_12_hours_derived.zarr"
+      time_name: "time"
+      lead_name: "prediction_timedelta"
+      latitude_name: "lat"
+      longitude_name: "lon"
+      t2m_name: "2m_temperature"
+    pangu_hres_init:
+      path: "gs://weatherbench2/datasets/pangu_hres_init/2020_0012_0p25.zarr"
+      time_name: "time"
+      lead_name: "prediction_timedelta"
+      latitude_name: "latitude"
+      longitude_name: "longitude"
+      t2m_name: "2m_temperature"
+  era5:
+    path: "gs://weatherbench2/datasets/era5/1959-2023_01_10-full_37-1h-0p25deg-chunk-1.zarr"
+    time_name: "time"
+    latitude_name: "latitude"
+    longitude_name: "longitude"
+    t2m_name: "2m_temperature"
+model_extensions:
+  era5_forecast:
+    cohort: "era5_initialised"
+    path: "gs://weatherbench2/datasets/era5-forecasts/2020-1440x721.zarr"
+    time_name: "time"
+    lead_name: "prediction_timedelta"
+    latitude_name: "latitude"
+    longitude_name: "longitude"
+    t2m_name: "2m_temperature"
+  graphcast_era5:
+    cohort: "era5_initialised"
+    path: "gs://weatherbench2/datasets/graphcast/2020/date_range_2019-11-16_2021-02-01_12_hours_derived.zarr"
+    time_name: "time"
+    lead_name: "prediction_timedelta"
+    latitude_name: "lat"
+    longitude_name: "lon"
+    t2m_name: "2m_temperature"
+  pangu_era5:
+    cohort: "era5_initialised"
+    path: "gs://weatherbench2/datasets/pangu/2018-2022_0012_0p25.zarr"
+    time_name: "time"
+    lead_name: "prediction_timedelta"
+    latitude_name: "latitude"
+    longitude_name: "longitude"
+    t2m_name: "2m_temperature"
+  # Operational deterministic baseline. It is an ensemble mean, so results
+  # are reported as an operational-family extension rather than as another
+  # identical-HRES-initialisation ML model.
+  ifs_ens_mean:
+    cohort: "operational_ensemble_mean"
+    path: "gs://weatherbench2/datasets/ifs_ens/2018-2022-1440x721_mean.zarr"
+    time_name: "time"
+    lead_name: "prediction_timedelta"
+    latitude_name: "latitude"
+    longitude_name: "longitude"
+    t2m_name: "2m_temperature"
+analysis_cohorts:
+  # The pre-specified operational-HRES comparison.  This remains the primary
+  # confirmation analysis and is never overwritten by extension outputs.
+  hres_initialised:
+    label: "Operational HRES-initialised comparison (confirmatory)"
+    models: [ifs_hres, graphcast_hres_init, pangu_hres_init]
+    extensions: []
+    baseline_model: ifs_hres
+  # All three forecasts use ERA5 initial conditions.  They are a comparable
+  # but distinct cohort, so their ranks must not be pooled with HRES results.
+  era5_initialised:
+    label: "ERA5-initialised deterministic comparison (exploratory extension)"
+    models: [era5_forecast, graphcast_era5, pangu_era5]
+    extensions: [era5_forecast, graphcast_era5, pangu_era5]
+    baseline_model: era5_forecast
+  # Same operational family, but the ensemble mean is deliberately reported
+  # as a two-model sensitivity rather than folded into a mixed-family ranking.
+  operational_ifs_pair:
+    label: "Operational IFS deterministic versus ensemble-mean sensitivity"
+    models: [ifs_hres, ifs_ens_mean]
+    extensions: [ifs_ens_mean]
+    baseline_model: ifs_hres

@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-08-22T16:45:27.817314+00:00",
+  "config": {
+    "path": "config/synthetic_support_identifiability.yaml",
+    "sha256": "65aced98c480fde56590bf176cafc2cd7cdc727951d1e0373d253bbcfca7cc31"
+  },
+  "script_sha256": "65b9cc6dc892881ede0129c67f98e21cecf920b5fb01560c1abb221fac9b99fa",
+  "outputs": {
+    "support_profile_scores.csv": {
+      "bytes": 5475,
+      "sha256": "fbb7118a6a5f8c656b7de90feab120252b0021c9ad1b1552e8ff7e82e601c518"
+    },
+    "pairwise_contrasts.csv": {
+      "bytes": 11434,
+      "sha256": "ac5695ef14f7d61220501181758791d1c5e7cd3ab0a2ee91da1f31aa9a56444a"
+    },
+    "support_shifts.csv": {
+      "bytes": 9670,
+      "sha256": "37157b7ac4ab63f3554a192c937d1f1a0d8ad38132560afc3a9087325784574b"
+    },
+    "rank_stability.csv": {
+      "bytes": 2289,
+      "sha256": "6518f4ffd5e51bb3179170ee25748b270613f94213a8ab025ca1f5275ed3d2cf"
+    },
+    "forecast_smoothing_optima.csv": {
+      "bytes": 1119,
+      "sha256": "26acac86b64974794e09a30a07ab65a7e5badb0d9ba4c0f0b8ea716677611017"
+    },
+    "flip_phase_diagram.csv": {
+      "bytes": 8829,
+      "sha256": "af85d2468b0e68760b62e9a79a9e3efae08f5db4e06c80cba3074507185f499f"
+    },
+    "summary.json": {
+      "bytes": 3318,
+      "sha256": "c548838973165faba13076bb6324236eb2e56754342ccb96b839e6b0a8bd27a6"
+    }
+  }
+}

@@ -1,0 +1,5 @@
+network,ladder,smallest_positive_radius_km,stations,eligible_centres,minimum_centres,density_gate_passed
+inmet_hourly,exact_preregistered,25.0,345,5,10,False
+inmet_hourly,prospective_common,50.0,345,37,10,True
+midas_open_uk,exact_preregistered,25.0,103,15,10,True
+midas_open_uk,prospective_common,50.0,103,71,10,True

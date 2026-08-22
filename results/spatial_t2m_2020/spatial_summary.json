@@ -1,0 +1,22 @@
+{
+  "pilot_name": "regional_t2m_2020",
+  "analysis": "all-eligible-station spatial replication",
+  "leads_hours": [
+    24,
+    48,
+    72
+  ],
+  "bootstrap": {
+    "method": "circular moving-block bootstrap on ordered valid days",
+    "n_resamples": 2000,
+    "block_days": [
+      1,
+      3,
+      5,
+      7
+    ],
+    "ci": 0.95,
+    "seed": 20260815
+  },
+  "status": "completed"
+}

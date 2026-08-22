@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-08-22T16:45:29.289058+00:00",
+  "script_sha256": "b2a00ffd8b1e8c046803d2a44ccb10ebb46075c2c66608e54550ad652df4f978",
+  "inputs": {
+    "support_profile_scores.csv": "fbb7118a6a5f8c656b7de90feab120252b0021c9ad1b1552e8ff7e82e601c518",
+    "pairwise_contrasts.csv": "ac5695ef14f7d61220501181758791d1c5e7cd3ab0a2ee91da1f31aa9a56444a",
+    "flip_phase_diagram.csv": "af85d2468b0e68760b62e9a79a9e3efae08f5db4e06c80cba3074507185f499f"
+  },
+  "outputs": {
+    "support_ranking_identifiability.png": {
+      "bytes": 409217,
+      "sha256": "3ac717105e795fde877d934f88125cdf80e26d9f1b4960efd8bd1f612e058423"
+    },
+    "support_ranking_identifiability.pdf": {
+      "bytes": 54913,
+      "sha256": "f4d963b17c66e985d856f146e4691a4586adcf06f7758a81f8592b8a12babda3"
+    },
+    "support_ranking_identifiability_alt_text.md": {
+      "bytes": 926,
+      "sha256": "9b747736830e5ce28bbdc268743eb024a59158bd8445c2dcaf28da8cea009706"
+    }
+  }
+}

@@ -1,0 +1,73 @@
+lead_h,metric,bootstrap,temporal_block_days,n_common_cases,n_stations,n_daily_blocks,avamet_winner,era5_winner,bootstrap_winners_differ_frequency,primary_effect,primary_effect_ci_low,primary_effect_ci_high,bootstrap_pairwise_ranking_reversal_frequency,model,analysis_role,mean_error_era5,mean_error_avamet,avamet_minus_era5_mean_error,avamet_minus_era5_mean_error_ci_low,avamet_minus_era5_mean_error_ci_high
+24,bias,temporal_circular_blocks,1,102976,146,363,,,,,,,,ifs_hres,diagnostic_signed_mean_error_reference_shift; no ranking,-0.7161169269407928,-0.5011200228387537,0.2143837218933328,0.17387407888764167,0.25539615716919606
+24,bias,temporal_circular_blocks,1,102976,146,363,,,,,,,,graphcast_hres_init,diagnostic_signed_mean_error_reference_shift; no ranking,-0.4716159006362465,-0.2566189965342074,0.21438372189333274,0.17387407888764156,0.25539615716919556
+24,bias,temporal_circular_blocks,1,102976,146,363,,,,,,,,pangu_hres_init,diagnostic_signed_mean_error_reference_shift; no ranking,-0.25849149130807125,-0.04349458720603215,0.21438372189333268,0.17387407888764125,0.25539615716919556
+24,bias,temporal_circular_blocks,3,102976,146,363,,,,,,,,ifs_hres,diagnostic_signed_mean_error_reference_shift; no ranking,-0.7161169269407928,-0.5011200228387537,0.2156859308469548,0.15798942489869547,0.2695323316976033
+24,bias,temporal_circular_blocks,3,102976,146,363,,,,,,,,graphcast_hres_init,diagnostic_signed_mean_error_reference_shift; no ranking,-0.4716159006362465,-0.2566189965342074,0.21568593084695475,0.1579894248986951,0.2695323316976035
+24,bias,temporal_circular_blocks,3,102976,146,363,,,,,,,,pangu_hres_init,diagnostic_signed_mean_error_reference_shift; no ranking,-0.25849149130807125,-0.04349458720603215,0.2156859308469547,0.15798942489869505,0.2695323316976032
+24,bias,temporal_circular_blocks,5,102976,146,363,,,,,,,,ifs_hres,diagnostic_signed_mean_error_reference_shift; no ranking,-0.7161169269407928,-0.5011200228387537,0.21431765403261294,0.15342723623869434,0.277599420175951
+24,bias,temporal_circular_blocks,5,102976,146,363,,,,,,,,graphcast_hres_init,diagnostic_signed_mean_error_reference_shift; no ranking,-0.4716159006362465,-0.2566189965342074,0.21431765403261288,0.1534272362386946,0.27759942017595096
+24,bias,temporal_circular_blocks,5,102976,146,363,,,,,,,,pangu_hres_init,diagnostic_signed_mean_error_reference_shift; no ranking,-0.25849149130807125,-0.04349458720603215,0.2143176540326128,0.1534272362386946,0.2775994201759504
+24,bias,temporal_circular_blocks,7,102976,146,363,,,,,,,,ifs_hres,diagnostic_signed_mean_error_reference_shift; no ranking,-0.7161169269407928,-0.5011200228387537,0.21447112539232507,0.14912621483464894,0.28007016863056516
+24,bias,temporal_circular_blocks,7,102976,146,363,,,,,,,,graphcast_hres_init,diagnostic_signed_mean_error_reference_shift; no ranking,-0.4716159006362465,-0.2566189965342074,0.21447112539232496,0.14912621483464927,0.28007016863056455
+24,bias,temporal_circular_blocks,7,102976,146,363,,,,,,,,pangu_hres_init,diagnostic_signed_mean_error_reference_shift; no ranking,-0.25849149130807125,-0.04349458720603215,0.21447112539232488,0.14912621483464894,0.2800701686305648
+24,mae,temporal_circular_blocks,1,102976,146,363,graphcast_hres_init,pangu_hres_init,1.0,-0.14445647867978112,-0.16308868576746274,-0.12572294577603096,1.0,,,,,,,
+24,mae,temporal_circular_blocks,3,102976,146,363,graphcast_hres_init,pangu_hres_init,1.0,-0.14466076181182524,-0.16587109152201038,-0.12422699196066572,1.0,,,,,,,
+24,mae,temporal_circular_blocks,5,102976,146,363,graphcast_hres_init,pangu_hres_init,1.0,-0.14443043384995727,-0.16773154845685379,-0.12181804147859056,1.0,,,,,,,
+24,mae,temporal_circular_blocks,7,102976,146,363,graphcast_hres_init,pangu_hres_init,1.0,-0.14422055083747612,-0.16750132749282748,-0.12046390482362157,1.0,,,,,,,
+24,medae,temporal_circular_blocks,1,102976,146,363,graphcast_hres_init,pangu_hres_init,1.0,-0.12185004467502535,-0.14271308978854155,-0.10105048602566087,1.0,,,,,,,
+24,medae,temporal_circular_blocks,3,102976,146,363,graphcast_hres_init,pangu_hres_init,1.0,-0.12183693972654552,-0.1467947607157206,-0.0961625635652929,1.0,,,,,,,
+24,medae,temporal_circular_blocks,5,102976,146,363,graphcast_hres_init,pangu_hres_init,1.0,-0.12201961892841445,-0.14672488925367774,-0.09772287322577627,1.0,,,,,,,
+24,medae,temporal_circular_blocks,7,102976,146,363,graphcast_hres_init,pangu_hres_init,1.0,-0.1216772204940382,-0.14765990930975645,-0.09550510775871049,1.0,,,,,,,
+24,rmse,temporal_circular_blocks,1,102976,146,363,graphcast_hres_init,pangu_hres_init,1.0,-0.17465618001768762,-0.19830763905495566,-0.15162305125331388,1.0,,,,,,,
+24,rmse,temporal_circular_blocks,3,102976,146,363,graphcast_hres_init,pangu_hres_init,1.0,-0.17518016911425197,-0.20336747313089545,-0.1474254909516048,1.0,,,,,,,
+24,rmse,temporal_circular_blocks,5,102976,146,363,graphcast_hres_init,pangu_hres_init,1.0,-0.17471812046339233,-0.2064396881894385,-0.14645788342808078,1.0,,,,,,,
+24,rmse,temporal_circular_blocks,7,102976,146,363,graphcast_hres_init,pangu_hres_init,1.0,-0.17526784294984032,-0.2092171496198724,-0.1445311748956743,1.0,,,,,,,
+48,bias,temporal_circular_blocks,1,102694,146,362,,,,,,,,ifs_hres,diagnostic_signed_mean_error_reference_shift; no ranking,-0.7627346875403908,-0.5467459637752594,0.21613445252005983,0.17539819275562427,0.2564732277388685
+48,bias,temporal_circular_blocks,1,102694,146,362,,,,,,,,graphcast_hres_init,diagnostic_signed_mean_error_reference_shift; no ranking,-0.4571423925284072,-0.24115366876327604,0.2161344525200597,0.17539819275562477,0.25647322773886805
+48,bias,temporal_circular_blocks,1,102694,146,362,,,,,,,,pangu_hres_init,diagnostic_signed_mean_error_reference_shift; no ranking,-0.1322228559256756,0.0837658678394556,0.21613445252005978,0.17539819275562477,0.2564732277388689
+48,bias,temporal_circular_blocks,3,102694,146,362,,,,,,,,ifs_hres,diagnostic_signed_mean_error_reference_shift; no ranking,-0.7627346875403908,-0.5467459637752594,0.2162285507141793,0.16185269488288498,0.2702731658889514
+48,bias,temporal_circular_blocks,3,102694,146,362,,,,,,,,graphcast_hres_init,diagnostic_signed_mean_error_reference_shift; no ranking,-0.4571423925284072,-0.24115366876327604,0.21622855071417912,0.1618526948828855,0.27027316588895206
+48,bias,temporal_circular_blocks,3,102694,146,362,,,,,,,,pangu_hres_init,diagnostic_signed_mean_error_reference_shift; no ranking,-0.1322228559256756,0.0837658678394556,0.2162285507141792,0.16185269488288573,0.2702731658889517
+48,bias,temporal_circular_blocks,5,102694,146,362,,,,,,,,ifs_hres,diagnostic_signed_mean_error_reference_shift; no ranking,-0.7627346875403908,-0.5467459637752594,0.21517441902836154,0.1526104165787697,0.27925852942486423
+48,bias,temporal_circular_blocks,5,102694,146,362,,,,,,,,graphcast_hres_init,diagnostic_signed_mean_error_reference_shift; no ranking,-0.4571423925284072,-0.24115366876327604,0.21517441902836137,0.1526104165787706,0.27925852942486334
+48,bias,temporal_circular_blocks,5,102694,146,362,,,,,,,,pangu_hres_init,diagnostic_signed_mean_error_reference_shift; no ranking,-0.1322228559256756,0.0837658678394556,0.21517441902836149,0.15261041657877084,0.2792585294248639
+48,bias,temporal_circular_blocks,7,102694,146,362,,,,,,,,ifs_hres,diagnostic_signed_mean_error_reference_shift; no ranking,-0.7627346875403908,-0.5467459637752594,0.21672995319412308,0.14942129891633651,0.2883301812096827
+48,bias,temporal_circular_blocks,7,102694,146,362,,,,,,,,graphcast_hres_init,diagnostic_signed_mean_error_reference_shift; no ranking,-0.4571423925284072,-0.24115366876327604,0.21672995319412294,0.14942129891633593,0.2883301812096823
+48,bias,temporal_circular_blocks,7,102694,146,362,,,,,,,,pangu_hres_init,diagnostic_signed_mean_error_reference_shift; no ranking,-0.1322228559256756,0.0837658678394556,0.21672995319412303,0.14942129891633585,0.28833018120968307
+48,mae,temporal_circular_blocks,1,102694,146,362,graphcast_hres_init,pangu_hres_init,1.0,-0.16796262630008368,-0.1905312109917254,-0.14566312162411502,1.0,,,,,,,
+48,mae,temporal_circular_blocks,3,102694,146,362,graphcast_hres_init,pangu_hres_init,1.0,-0.1679947162621506,-0.1945912866644395,-0.14335492704932426,1.0,,,,,,,
+48,mae,temporal_circular_blocks,5,102694,146,362,graphcast_hres_init,pangu_hres_init,1.0,-0.16888923562675595,-0.19527542992160465,-0.14325142210518751,1.0,,,,,,,
+48,mae,temporal_circular_blocks,7,102694,146,362,graphcast_hres_init,pangu_hres_init,1.0,-0.16830198301490454,-0.1955765104123909,-0.14215277594038306,1.0,,,,,,,
+48,medae,temporal_circular_blocks,1,102694,146,362,graphcast_hres_init,pangu_hres_init,1.0,-0.13919847837606963,-0.16658366797121993,-0.11204040814913231,1.0,,,,,,,
+48,medae,temporal_circular_blocks,3,102694,146,362,graphcast_hres_init,pangu_hres_init,1.0,-0.13895916626188978,-0.16883373199444016,-0.1102997018307018,1.0,,,,,,,
+48,medae,temporal_circular_blocks,5,102694,146,362,graphcast_hres_init,pangu_hres_init,1.0,-0.13896890753721247,-0.16861020281741834,-0.11103967430265788,1.0,,,,,,,
+48,medae,temporal_circular_blocks,7,102694,146,362,graphcast_hres_init,pangu_hres_init,1.0,-0.13818489153172556,-0.1689053169951954,-0.10908831337393912,1.0,,,,,,,
+48,rmse,temporal_circular_blocks,1,102694,146,362,graphcast_hres_init,pangu_hres_init,1.0,-0.20963712454116643,-0.2355792568534317,-0.1842629812321924,1.0,,,,,,,
+48,rmse,temporal_circular_blocks,3,102694,146,362,graphcast_hres_init,pangu_hres_init,1.0,-0.2093782556307047,-0.2394442547602016,-0.17929743976594312,1.0,,,,,,,
+48,rmse,temporal_circular_blocks,5,102694,146,362,graphcast_hres_init,pangu_hres_init,1.0,-0.20967898329067405,-0.23987367623593012,-0.17913163335420873,1.0,,,,,,,
+48,rmse,temporal_circular_blocks,7,102694,146,362,graphcast_hres_init,pangu_hres_init,1.0,-0.21023613152492926,-0.24274566719210952,-0.17784556523488249,1.0,,,,,,,
+72,bias,temporal_circular_blocks,1,102412,146,361,,,,,,,,ifs_hres,diagnostic_signed_mean_error_reference_shift; no ranking,-0.7984547614739234,-0.5806496530626174,0.21883405706636044,0.1776533434139104,0.25973030021089755
+72,bias,temporal_circular_blocks,1,102412,146,361,,,,,,,,graphcast_hres_init,diagnostic_signed_mean_error_reference_shift; no ranking,-0.4464213741388073,-0.22861626572750143,0.21883405706636064,0.1776533434139103,0.25973030021089705
+72,bias,temporal_circular_blocks,1,102412,146,361,,,,,,,,pangu_hres_init,diagnostic_signed_mean_error_reference_shift; no ranking,-0.07459635432674964,0.14320875408455624,0.21883405706636067,0.1776533434139103,0.2597303002108972
+72,bias,temporal_circular_blocks,3,102412,146,361,,,,,,,,ifs_hres,diagnostic_signed_mean_error_reference_shift; no ranking,-0.7984547614739234,-0.5806496530626174,0.21838919555872702,0.16567066512463519,0.2696080542156651
+72,bias,temporal_circular_blocks,3,102412,146,361,,,,,,,,graphcast_hres_init,diagnostic_signed_mean_error_reference_shift; no ranking,-0.4464213741388073,-0.22861626572750143,0.2183891955587272,0.1656706651246357,0.2696080542156662
+72,bias,temporal_circular_blocks,3,102412,146,361,,,,,,,,pangu_hres_init,diagnostic_signed_mean_error_reference_shift; no ranking,-0.07459635432674964,0.14320875408455624,0.21838919555872724,0.1656706651246355,0.26960805421566625
+72,bias,temporal_circular_blocks,5,102412,146,361,,,,,,,,ifs_hres,diagnostic_signed_mean_error_reference_shift; no ranking,-0.7984547614739234,-0.5806496530626174,0.21801351446971853,0.15565402057489872,0.27838817315099623
+72,bias,temporal_circular_blocks,5,102412,146,361,,,,,,,,graphcast_hres_init,diagnostic_signed_mean_error_reference_shift; no ranking,-0.4464213741388073,-0.22861626572750143,0.2180135144697187,0.15565402057489944,0.27838817315099584
+72,bias,temporal_circular_blocks,5,102412,146,361,,,,,,,,pangu_hres_init,diagnostic_signed_mean_error_reference_shift; no ranking,-0.07459635432674964,0.14320875408455624,0.21801351446971873,0.1556540205748993,0.2783881731509959
+72,bias,temporal_circular_blocks,7,102412,146,361,,,,,,,,ifs_hres,diagnostic_signed_mean_error_reference_shift; no ranking,-0.7984547614739234,-0.5806496530626174,0.2180448816391235,0.15030527642601338,0.28784961320408814
+72,bias,temporal_circular_blocks,7,102412,146,361,,,,,,,,graphcast_hres_init,diagnostic_signed_mean_error_reference_shift; no ranking,-0.4464213741388073,-0.22861626572750143,0.21804488163912367,0.15030527642601316,0.28784961320408825
+72,bias,temporal_circular_blocks,7,102412,146,361,,,,,,,,pangu_hres_init,diagnostic_signed_mean_error_reference_shift; no ranking,-0.07459635432674964,0.14320875408455624,0.21804488163912372,0.15030527642601316,0.2878496132040885
+72,mae,temporal_circular_blocks,1,102412,146,361,graphcast_hres_init,pangu_hres_init,1.0,-0.1624982083958218,-0.1851866838693371,-0.13919203114293485,1.0,,,,,,,
+72,mae,temporal_circular_blocks,3,102412,146,361,graphcast_hres_init,pangu_hres_init,1.0,-0.16186624681228454,-0.18556947818317585,-0.13820826930802024,1.0,,,,,,,
+72,mae,temporal_circular_blocks,5,102412,146,361,graphcast_hres_init,pangu_hres_init,1.0,-0.1615098768386667,-0.18600452183193275,-0.13672633030332657,1.0,,,,,,,
+72,mae,temporal_circular_blocks,7,102412,146,361,graphcast_hres_init,pangu_hres_init,1.0,-0.16219250507901797,-0.18646214125586155,-0.13607906916973597,1.0,,,,,,,
+72,medae,temporal_circular_blocks,1,102412,146,361,graphcast_hres_init,pangu_hres_init,0.965,-0.1265214821241502,-0.15548476260146563,-0.09756967212856751,0.965,,,,,,,
+72,medae,temporal_circular_blocks,3,102412,146,361,graphcast_hres_init,pangu_hres_init,0.954,-0.12686462795558842,-0.15750087086449452,-0.09586759473486219,0.954,,,,,,,
+72,medae,temporal_circular_blocks,5,102412,146,361,graphcast_hres_init,pangu_hres_init,0.961,-0.12710045529249778,-0.1566992104033535,-0.09798615793247831,0.961,,,,,,,
+72,medae,temporal_circular_blocks,7,102412,146,361,graphcast_hres_init,pangu_hres_init,0.9525,-0.12751091634884745,-0.1568872541664005,-0.09926629977780389,0.9525,,,,,,,
+72,rmse,temporal_circular_blocks,1,102412,146,361,graphcast_hres_init,pangu_hres_init,0.9995,-0.20545557635227035,-0.2318302450431139,-0.17824753906962337,0.9995,,,,,,,
+72,rmse,temporal_circular_blocks,3,102412,146,361,graphcast_hres_init,pangu_hres_init,1.0,-0.2056470359068216,-0.23765043664363716,-0.17391512676734328,1.0,,,,,,,
+72,rmse,temporal_circular_blocks,5,102412,146,361,graphcast_hres_init,pangu_hres_init,1.0,-0.20529706020346045,-0.23740552690496483,-0.17327351848157213,1.0,,,,,,,
+72,rmse,temporal_circular_blocks,7,102412,146,361,graphcast_hres_init,pangu_hres_init,1.0,-0.2055793213213335,-0.2366399609284595,-0.1750605204607229,1.0,,,,,,,

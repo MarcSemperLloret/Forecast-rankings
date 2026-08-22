@@ -1,0 +1,28 @@
+{
+  "pilot_name": "regional_t2m_2020",
+  "cohort": "hres_initialised",
+  "leads_hours": [
+    24,
+    48,
+    72,
+    120,
+    168
+  ],
+  "bootstrap": {
+    "method": "circular moving-block bootstrap on ordered valid days",
+    "block_days": [
+      1,
+      3,
+      5,
+      7
+    ],
+    "n_resamples": 2000,
+    "ci": 0.95,
+    "seed": 20260815
+  },
+  "primary_pair": [
+    "graphcast_hres_init",
+    "pangu_hres_init"
+  ],
+  "status": "completed only for supplied consolidated lead-time panels"
+}

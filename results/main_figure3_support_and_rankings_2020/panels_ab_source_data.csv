@@ -1,0 +1,49 @@
+network,model,support_km,optimal_sigma_km,route,ci_low_km,ci_high_km
+inmet_hourly,graphcast_hres_init,0.0,0.0,uniform,0.0,0.0
+inmet_hourly,graphcast_hres_init,50.0,25.0,uniform,25.0,25.0
+inmet_hourly,graphcast_hres_init,100.0,50.0,uniform,50.0,50.0
+inmet_hourly,graphcast_hres_init,200.0,50.0,uniform,50.0,50.0
+inmet_hourly,ifs_hres,0.0,0.0,uniform,0.0,0.0
+inmet_hourly,ifs_hres,50.0,25.0,uniform,25.0,25.0
+inmet_hourly,ifs_hres,100.0,50.0,uniform,50.0,50.0
+inmet_hourly,ifs_hres,200.0,50.0,uniform,50.0,50.0
+inmet_hourly,pangu_hres_init,0.0,0.0,uniform,0.0,0.0
+inmet_hourly,pangu_hres_init,50.0,25.0,uniform,25.0,25.0
+inmet_hourly,pangu_hres_init,100.0,50.0,uniform,50.0,50.0
+inmet_hourly,pangu_hres_init,200.0,50.0,uniform,50.0,50.0
+midas_open_uk,graphcast_hres_init,0.0,0.0,uniform,0.0,0.0
+midas_open_uk,graphcast_hres_init,50.0,0.0,uniform,0.0,0.0
+midas_open_uk,graphcast_hres_init,100.0,12.5,uniform,12.5,12.5
+midas_open_uk,graphcast_hres_init,200.0,12.5,uniform,12.5,12.5
+midas_open_uk,ifs_hres,0.0,0.0,uniform,0.0,0.0
+midas_open_uk,ifs_hres,50.0,12.5,uniform,12.5,12.5
+midas_open_uk,ifs_hres,100.0,25.0,uniform,25.0,25.0
+midas_open_uk,ifs_hres,200.0,50.0,uniform,50.0,50.0
+midas_open_uk,pangu_hres_init,0.0,0.0,uniform,0.0,0.0
+midas_open_uk,pangu_hres_init,50.0,0.0,uniform,0.0,0.0
+midas_open_uk,pangu_hres_init,100.0,12.5,uniform,12.5,12.5
+midas_open_uk,pangu_hres_init,200.0,12.5,uniform,12.5,12.5
+inmet_hourly,graphcast_hres_init,0.0,0.0,fixed-three-station thinning,0.0,0.0
+inmet_hourly,graphcast_hres_init,50.0,25.0,fixed-three-station thinning,25.0,25.0
+inmet_hourly,graphcast_hres_init,100.0,47.916666666666664,fixed-three-station thinning,25.0,50.0
+inmet_hourly,graphcast_hres_init,200.0,64.16666666666667,fixed-three-station thinning,50.0,100.0
+inmet_hourly,ifs_hres,0.0,0.0,fixed-three-station thinning,0.0,0.0
+inmet_hourly,ifs_hres,50.0,25.0,fixed-three-station thinning,25.0,25.0
+inmet_hourly,ifs_hres,100.0,48.333333333333336,fixed-three-station thinning,25.0,50.0
+inmet_hourly,ifs_hres,200.0,63.333333333333336,fixed-three-station thinning,50.0,100.0
+inmet_hourly,pangu_hres_init,0.0,0.0,fixed-three-station thinning,0.0,0.0
+inmet_hourly,pangu_hres_init,50.0,25.0,fixed-three-station thinning,25.0,25.0
+inmet_hourly,pangu_hres_init,100.0,41.666666666666664,fixed-three-station thinning,25.0,50.0
+inmet_hourly,pangu_hres_init,200.0,56.666666666666664,fixed-three-station thinning,50.0,100.0
+midas_open_uk,graphcast_hres_init,0.0,0.0,fixed-three-station thinning,0.0,0.0
+midas_open_uk,graphcast_hres_init,50.0,0.20833333333333334,fixed-three-station thinning,0.0,0.0
+midas_open_uk,graphcast_hres_init,100.0,12.708333333333334,fixed-three-station thinning,5.937500000000001,25.0
+midas_open_uk,graphcast_hres_init,200.0,16.25,fixed-three-station thinning,0.0,25.0
+midas_open_uk,ifs_hres,0.0,0.0,fixed-three-station thinning,0.0,0.0
+midas_open_uk,ifs_hres,50.0,15.625,fixed-three-station thinning,12.5,25.0
+midas_open_uk,ifs_hres,100.0,25.0,fixed-three-station thinning,25.0,25.0
+midas_open_uk,ifs_hres,200.0,38.75,fixed-three-station thinning,25.0,50.0
+midas_open_uk,pangu_hres_init,0.0,0.0,fixed-three-station thinning,0.0,0.0
+midas_open_uk,pangu_hres_init,50.0,1.4583333333333333,fixed-three-station thinning,0.0,12.5
+midas_open_uk,pangu_hres_init,100.0,12.291666666666666,fixed-three-station thinning,12.5,12.5
+midas_open_uk,pangu_hres_init,200.0,12.5,fixed-three-station thinning,0.0,25.0

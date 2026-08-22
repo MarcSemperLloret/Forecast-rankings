@@ -1,0 +1,13 @@
+network,model,metric,era5_optimal_sigma_km,station_optimal_sigma_km,opposite_optima_pass,same_direction_at_every_positive_sigma
+inmet_hourly,ifs_hres,mae,25.0,0.0,True,False
+inmet_hourly,graphcast_hres_init,mae,25.0,0.0,True,False
+inmet_hourly,pangu_hres_init,mae,12.5,0.0,True,False
+inmet_hourly,ifs_hres,rmse,25.0,0.0,True,False
+inmet_hourly,graphcast_hres_init,rmse,25.0,0.0,True,False
+inmet_hourly,pangu_hres_init,rmse,12.5,0.0,True,False
+midas_open_uk,ifs_hres,mae,25.0,0.0,True,False
+midas_open_uk,graphcast_hres_init,mae,25.0,0.0,True,False
+midas_open_uk,pangu_hres_init,mae,12.5,0.0,True,False
+midas_open_uk,ifs_hres,rmse,25.0,0.0,True,False
+midas_open_uk,graphcast_hres_init,rmse,12.5,0.0,True,False
+midas_open_uk,pangu_hres_init,rmse,12.5,0.0,True,False

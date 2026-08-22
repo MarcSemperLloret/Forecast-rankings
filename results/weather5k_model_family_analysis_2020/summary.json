@@ -1,0 +1,129 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-08-22T05:36:07.437543+00:00",
+  "analysis_role": "prospective_model_family_extension_not_a_replacement_for_national_causal_tests",
+  "config": {
+    "path": "config\\model_family_extension_2020.yaml",
+    "sha256": "8065d629315be7092c1c471df42c8eba8e3f9c0e5684af31c5b7a1f9102e9776"
+  },
+  "inputs": {
+    "errors": {
+      "path": "results\\weather5k_model_family_extension_2020\\cell_day_errors.parquet",
+      "sha256": "d6e4aab8dac31ed3d954d66066eb738eac0a6e73d463c7c455fc45c7f1f383a8"
+    },
+    "roughness": {
+      "path": "data\\interim\\weather5k_model_family_roughness_2020\\roughness.parquet",
+      "sha256": "ee2654b1a041176067a3b12afc35ffc27bf149d433cee355e0b0271ea22f4b11"
+    }
+  },
+  "support": {
+    "models": 5,
+    "primary_deterministic_families": 4,
+    "cells": 2529,
+    "days": 351,
+    "common_model_cell_days": 885009,
+    "first_day": "2020-01-02",
+    "last_day": "2020-12-17"
+  },
+  "bootstrap": {
+    "unit": "valid day",
+    "circular_block_days": 7,
+    "resamples": 2000,
+    "seed": 20260822,
+    "spatial_weighting": "equal cell after time aggregation within cell"
+  },
+  "primary_scale_km": 600,
+  "slope_results": [
+    {
+      "metric": "mae",
+      "scale_km": 300,
+      "slope_c_per_k": 1.375037334678693,
+      "spearman": 0.39999999999999997,
+      "families": 4,
+      "median": 1.3718409612569507,
+      "ci_low": 1.2080762335245567,
+      "ci_high": 1.5503963961021798,
+      "ci_excludes_zero_positive": true
+    },
+    {
+      "metric": "mae",
+      "scale_km": 600,
+      "slope_c_per_k": -0.6487120372192045,
+      "spearman": 0.0,
+      "families": 4,
+      "median": -0.7080925906646169,
+      "ci_low": -4.486814605410211,
+      "ci_high": 4.425729370022678,
+      "ci_excludes_zero_positive": false
+    },
+    {
+      "metric": "mae",
+      "scale_km": 1200,
+      "slope_c_per_k": -0.9127664164334119,
+      "spearman": -0.7999999999999999,
+      "families": 4,
+      "median": -0.9073286712596287,
+      "ci_low": -1.0954144129448005,
+      "ci_high": -0.7736644415711068,
+      "ci_excludes_zero_positive": false
+    },
+    {
+      "metric": "rmse",
+      "scale_km": 300,
+      "slope_c_per_k": 2.7166959906856785,
+      "spearman": 0.39999999999999997,
+      "families": 4,
+      "median": 2.714348008156852,
+      "ci_low": 2.4003018628352355,
+      "ci_high": 3.0540350346034635,
+      "ci_excludes_zero_positive": true
+    },
+    {
+      "metric": "rmse",
+      "scale_km": 600,
+      "slope_c_per_k": -0.7138013046405531,
+      "spearman": 0.0,
+      "families": 4,
+      "median": -0.8421778268825104,
+      "ci_low": -8.41701079379442,
+      "ci_high": 9.139217782506872,
+      "ci_excludes_zero_positive": false
+    },
+    {
+      "metric": "rmse",
+      "scale_km": 1200,
+      "slope_c_per_k": -1.7850420348060365,
+      "spearman": -0.7999999999999999,
+      "families": 4,
+      "median": -1.7730746529418577,
+      "ci_low": -2.160016136338839,
+      "ci_high": -1.5113577348267997,
+      "ci_excludes_zero_positive": false
+    }
+  ],
+  "rank_results": [
+    {
+      "metric": "mae",
+      "spearman_between_reference_rankings": 1.0,
+      "pairwise_rank_reversals": 0,
+      "possible_pairs": 6,
+      "era5_order_best_to_worst": "graphcast_era5_1p5deg|fuxi_1p5deg|pangu_era5_1p5deg|era5_forecast_1p5deg",
+      "station_order_best_to_worst": "graphcast_era5_1p5deg|fuxi_1p5deg|pangu_era5_1p5deg|era5_forecast_1p5deg"
+    },
+    {
+      "metric": "rmse",
+      "spearman_between_reference_rankings": 1.0,
+      "pairwise_rank_reversals": 0,
+      "possible_pairs": 6,
+      "era5_order_best_to_worst": "graphcast_era5_1p5deg|fuxi_1p5deg|pangu_era5_1p5deg|era5_forecast_1p5deg",
+      "station_order_best_to_worst": "graphcast_era5_1p5deg|fuxi_1p5deg|pangu_era5_1p5deg|era5_forecast_1p5deg"
+    }
+  ],
+  "gates": {
+    "positive_point_slope_both_metrics_all_scales": false,
+    "primary_95ci_positive_both_metrics": false,
+    "gencast_advantage_direction_not_reversed": true,
+    "prespecified_mechanistic_breadth_supported": false
+  },
+  "interpretation_limit": "GenCast is an ensemble mean and is not pooled into the deterministic rank or slope. This extension broadens model families on a common coarse grid; the national 0.25-degree controlled-smoothing tests remain the causal evidence."
+}

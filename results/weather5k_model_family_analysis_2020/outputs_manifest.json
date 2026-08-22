@@ -1,0 +1,25 @@
+{
+  "script_sha256": "42abbe72b4682d4f7ae6d8030ef6f09ff63a5ce1f2e17eee06b82bc07574a195",
+  "outputs": {
+    "model_metrics.csv": {
+      "bytes": 1352,
+      "sha256": "0e0a1c0ee6acf0f7bc6c7fb6f1dead44ace28631d328bdba1ad0b235e2bc15de"
+    },
+    "slopes.csv": {
+      "bytes": 752,
+      "sha256": "65fe3ca6c93751724d4b7fc11ab5fbb025383c02a2cf7460d1fab0e682cfeeea"
+    },
+    "rank_comparison.csv": {
+      "bytes": 455,
+      "sha256": "d42356ada5d50d3f8568a6b0cf1600db5b60dcebc09b2b03ab23a70d6cb7b896"
+    },
+    "summary.json": {
+      "bytes": 4637,
+      "sha256": "391f8efef02da15d3cb431639125abf60d1a74328cd39451871dfb42d9de392b"
+    },
+    "bootstrap_slopes.npz": {
+      "bytes": 91421,
+      "sha256": "2f7aaf0890459e83be36fdcf858bd88d06cb8a30b1bcbdb51c00be5db4832a55"
+    }
+  }
+}

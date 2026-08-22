@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "script_sha256": "d19e3b875752a663d0a27a7ab9a04f97680569fa2f66cdf7966932f5fc21f42e",
+  "inputs": {
+    "s1_smoothing_changes.csv": "a3275be46e8c9c8ca1e74bef0d2f3dacda88604d935763bea4785cf6fa3fc220",
+    "s1_s3_summary.json": "d11ec88414ca6a55ba4bc2a79569e00142dc8dd7966a02dc4fad977520bc8725",
+    "s2_support_optima.csv": "516ff2621f07d329f018200d6408f7a246c0996cf1daf7da4971be07083aa00f",
+    "s2_support_thinning.csv": "8456d6ee25c6686727641556a64b3762c53763a88f02c5ecf3ec5ea0f592459b",
+    "s2_summary.json": "28036b6af923ae189531a00fc85d96cf8e94dad3e3f89f544e91aa14eda92ea1"
+  },
+  "outputs": {
+    "national_causal_support_figure.png": {
+      "bytes": 761925,
+      "sha256": "5c3b64bfd2731c472af2863c3933538da9d8707e79fd22d64d0942e463054f21"
+    },
+    "national_causal_support_figure.pdf": {
+      "bytes": 56493,
+      "sha256": "ffcca0b15a307f6430d3306f4e515416aa22ea4150060c46256a8356fa2dcfd3"
+    },
+    "national_causal_support_figure_alt_text.md": {
+      "bytes": 811,
+      "sha256": "b6501219a2ff3016683597d45b9eb9d3d0f1a77f98aedbd0bb8c16be1e6e3e71"
+    },
+    "SINTESIS_CAUSAL_NACIONAL_2020.md": {
+      "bytes": 2689,
+      "sha256": "b78ec5dee1038e24e142efd2ab17fec9b4c694fbf87a54cd331780534299eee4"
+    },
+    "national_causal_support_figure_source_data.csv": {
+      "bytes": 12173,
+      "sha256": "c9c3ec341d331b0e85888cd9821399b75b136d53f2b5a3a52c96cba4af963b28"
+    }
+  },
+  "figure_specification": {
+    "width_inches": 7.2,
+    "target": "Nature double column (183 mm)",
+    "png_dpi": 600,
+    "vector_pdf": true,
+    "palette": "Okabe-Ito subset with redundant line and marker encoding",
+    "editorial_visual_quality_score": 11,
+    "editorial_score_breakdown": {
+      "legibility": 2,
+      "hierarchy": 2,
+      "composition": 2,
+      "consistency": 2,
+      "visual_economy": 1,
+      "editorial_appeal": 2
+    },
+    "review_note": "The fixed-count uncertainty is necessarily broad and retained rather than hidden."
+  }
+}

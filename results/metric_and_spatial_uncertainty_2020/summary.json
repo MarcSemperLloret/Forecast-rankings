@@ -1,0 +1,12 @@
+{
+  "mae_status": "primary metric retained",
+  "additional_metrics": [
+    "mae",
+    "rmse",
+    "bias",
+    "medae"
+  ],
+  "spatial_bootstrap": "nested resampling of fixed lat-lon station clusters and circular temporal blocks; cluster weights equal station counts",
+  "probability_label": "bootstrap frequency, not a p-value",
+  "status": "completed"
+}

@@ -1,0 +1,62 @@
+# First analytical expansion after the successful technical check. It retains
+# the exact station sample, sources, lead and QC rule from the one-week MVP.
+pilot_name: "pilot_t2m_2020q1"
+period:
+  init_start: "2020-01-01T00:00:00"
+  init_end: "2020-03-31T12:00:00"
+  cycles_utc: [0, 12]
+leads_hours: [24]
+variables: [t2m]
+stations:
+  n: 10
+  min_exact_utc_samples: 600
+  selection_seed: 20260813
+avamet:
+  archive_glob: "../../downbursts-cv-pilot/data/processed/avamet/archive/development/year=2020/*/*.parquet"
+  timezone: "UTC"
+  t2m_plausible_c: [-20.0, 50.0]
+  qc:
+    # AVAMET can encode a missing temperature as 0.0 C. Zero is physically
+    # possible in winter, so it is never masked by value alone. A value is
+    # excluded only if it fails the broad physical range or differs by >4 C
+    # from the centred five-report median for that station.
+    rolling_window_reports: 5
+    local_median_deviation_c: 4.0
+bootstrap:
+  unit: "valid_day"
+  n_resamples: 2000
+  seed: 20260814
+  ci: 0.95
+download:
+  max_workers: 4
+weatherbench2:
+  storage_options:
+    token: "anon"
+  models:
+    ifs_hres:
+      path: "gs://weatherbench2/datasets/hres/2016-2022-0012-1440x721.zarr"
+      time_name: "time"
+      lead_name: "prediction_timedelta"
+      latitude_name: "latitude"
+      longitude_name: "longitude"
+      t2m_name: "2m_temperature"
+    graphcast_hres_init:
+      path: "gs://weatherbench2/datasets/graphcast_hres_init/2020/date_range_2019-11-16_2021-02-01_12_hours_derived.zarr"
+      time_name: "time"
+      lead_name: "prediction_timedelta"
+      latitude_name: "lat"
+      longitude_name: "lon"
+      t2m_name: "2m_temperature"
+    pangu_hres_init:
+      path: "gs://weatherbench2/datasets/pangu_hres_init/2020_0012_0p25.zarr"
+      time_name: "time"
+      lead_name: "prediction_timedelta"
+      latitude_name: "latitude"
+      longitude_name: "longitude"
+      t2m_name: "2m_temperature"
+  era5:
+    path: "gs://weatherbench2/datasets/era5/1959-2023_01_10-full_37-1h-0p25deg-chunk-1.zarr"
+    time_name: "time"
+    latitude_name: "latitude"
+    longitude_name: "longitude"
+    t2m_name: "2m_temperature"

@@ -1,0 +1,15 @@
+{
+  "terrain": "ERA5 geopotential_at_surface / standard gravity; model-specific terrain unavailable in published HRES stores",
+  "thresholds_m": [
+    50.0,
+    100.0,
+    200.0
+  ],
+  "lapse_rates_k_per_km": [
+    5.0,
+    6.5,
+    8.0
+  ],
+  "method": "same daily circular block bootstrap as spatial replication",
+  "status": "completed"
+}

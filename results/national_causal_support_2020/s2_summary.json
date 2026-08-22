@@ -1,0 +1,255 @@
+{
+  "analysis": "national reference-support ladders S2",
+  "created_utc": "2026-08-22T04:35:31.918658+00:00",
+  "decisions": {
+    "exact_preregistered": {
+      "inmet_hourly": {
+        "eligible_centres": 5,
+        "density_gate_passed": false,
+        "metrics": {},
+        "status": "geometry_failure_not_scientific_refutation"
+      },
+      "midas_open_uk": {
+        "eligible_centres": 15,
+        "density_gate_passed": true,
+        "metrics": {
+          "mae": {
+            "routes": {
+              "uniform": {
+                "model_spearman": {
+                  "graphcast_hres_init": 0.8944271909999159,
+                  "ifs_hres": 0.9486832980505139,
+                  "pangu_hres_init": 0.7745966692414834
+                },
+                "mean_spearman": 0.872569052763971,
+                "models_positive": 3,
+                "passed": true
+              },
+              "gaussian": {
+                "model_spearman": {
+                  "graphcast_hres_init": 0.7745966692414834,
+                  "ifs_hres": 0.9486832980505139,
+                  "pangu_hres_init": 0.8944271909999159
+                },
+                "mean_spearman": 0.872569052763971,
+                "models_positive": 3,
+                "passed": true
+              },
+              "thinning": {
+                "model_spearman": {
+                  "graphcast_hres_init": 0.9486832980505139,
+                  "ifs_hres": 1.0,
+                  "pangu_hres_init": 0.316227766016838
+                },
+                "mean_spearman": 0.7549703546891173,
+                "models_positive": 3,
+                "passed": true
+              }
+            },
+            "passed": true
+          },
+          "rmse": {
+            "routes": {
+              "uniform": {
+                "model_spearman": {
+                  "graphcast_hres_init": 0.8944271909999159,
+                  "ifs_hres": 0.9486832980505139,
+                  "pangu_hres_init": 0.8944271909999159
+                },
+                "mean_spearman": 0.9125125600167818,
+                "models_positive": 3,
+                "passed": true
+              },
+              "gaussian": {
+                "model_spearman": {
+                  "graphcast_hres_init": 0.7745966692414834,
+                  "ifs_hres": 0.9486832980505139,
+                  "pangu_hres_init": 0.7745966692414834
+                },
+                "mean_spearman": 0.8326255455111603,
+                "models_positive": 3,
+                "passed": true
+              },
+              "thinning": {
+                "model_spearman": {
+                  "graphcast_hres_init": 0.9486832980505139,
+                  "ifs_hres": 1.0,
+                  "pangu_hres_init": 0.7378647873726218
+                },
+                "mean_spearman": 0.8955160284743786,
+                "models_positive": 3,
+                "passed": true
+              }
+            },
+            "passed": true
+          }
+        },
+        "passed": true,
+        "status": "passed"
+      }
+    },
+    "prospective_common": {
+      "inmet_hourly": {
+        "eligible_centres": 37,
+        "density_gate_passed": true,
+        "metrics": {
+          "mae": {
+            "routes": {
+              "uniform": {
+                "model_spearman": {
+                  "graphcast_hres_init": 0.9486832980505139,
+                  "ifs_hres": 0.9486832980505139,
+                  "pangu_hres_init": 0.9486832980505139
+                },
+                "mean_spearman": 0.9486832980505139,
+                "models_positive": 3,
+                "passed": true
+              },
+              "gaussian": {
+                "model_spearman": {
+                  "graphcast_hres_init": 0.9486832980505139,
+                  "ifs_hres": 0.9486832980505139,
+                  "pangu_hres_init": 0.9486832980505139
+                },
+                "mean_spearman": 0.9486832980505139,
+                "models_positive": 3,
+                "passed": true
+              },
+              "thinning": {
+                "model_spearman": {
+                  "graphcast_hres_init": 1.0,
+                  "ifs_hres": 1.0,
+                  "pangu_hres_init": 1.0
+                },
+                "mean_spearman": 1.0,
+                "models_positive": 3,
+                "passed": true
+              }
+            },
+            "passed": true
+          },
+          "rmse": {
+            "routes": {
+              "uniform": {
+                "model_spearman": {
+                  "graphcast_hres_init": 0.9486832980505139,
+                  "ifs_hres": 0.9486832980505139,
+                  "pangu_hres_init": 0.9486832980505139
+                },
+                "mean_spearman": 0.9486832980505139,
+                "models_positive": 3,
+                "passed": true
+              },
+              "gaussian": {
+                "model_spearman": {
+                  "graphcast_hres_init": 1.0,
+                  "ifs_hres": 1.0,
+                  "pangu_hres_init": 0.9486832980505139
+                },
+                "mean_spearman": 0.9828944326835046,
+                "models_positive": 3,
+                "passed": true
+              },
+              "thinning": {
+                "model_spearman": {
+                  "graphcast_hres_init": 1.0,
+                  "ifs_hres": 1.0,
+                  "pangu_hres_init": 1.0
+                },
+                "mean_spearman": 1.0,
+                "models_positive": 3,
+                "passed": true
+              }
+            },
+            "passed": true
+          }
+        },
+        "passed": true,
+        "status": "passed"
+      },
+      "midas_open_uk": {
+        "eligible_centres": 71,
+        "density_gate_passed": true,
+        "metrics": {
+          "mae": {
+            "routes": {
+              "uniform": {
+                "model_spearman": {
+                  "graphcast_hres_init": 0.9486832980505139,
+                  "ifs_hres": 1.0,
+                  "pangu_hres_init": 0.9486832980505139
+                },
+                "mean_spearman": 0.9657888653670094,
+                "models_positive": 3,
+                "passed": true
+              },
+              "gaussian": {
+                "model_spearman": {
+                  "graphcast_hres_init": 0.7745966692414834,
+                  "ifs_hres": 0.9486832980505139,
+                  "pangu_hres_init": 0.8944271909999159
+                },
+                "mean_spearman": 0.872569052763971,
+                "models_positive": 3,
+                "passed": true
+              },
+              "thinning": {
+                "model_spearman": {
+                  "graphcast_hres_init": 0.9486832980505139,
+                  "ifs_hres": 1.0,
+                  "pangu_hres_init": 1.0
+                },
+                "mean_spearman": 0.9828944326835046,
+                "models_positive": 3,
+                "passed": true
+              }
+            },
+            "passed": true
+          },
+          "rmse": {
+            "routes": {
+              "uniform": {
+                "model_spearman": {
+                  "graphcast_hres_init": 0.8944271909999159,
+                  "ifs_hres": 1.0,
+                  "pangu_hres_init": 0.8944271909999159
+                },
+                "mean_spearman": 0.9296181273332772,
+                "models_positive": 3,
+                "passed": true
+              },
+              "gaussian": {
+                "model_spearman": {
+                  "graphcast_hres_init": 0.7745966692414834,
+                  "ifs_hres": 0.8944271909999159,
+                  "pangu_hres_init": 0.8944271909999159
+                },
+                "mean_spearman": 0.8544836837471049,
+                "models_positive": 3,
+                "passed": true
+              },
+              "thinning": {
+                "model_spearman": {
+                  "graphcast_hres_init": 1.0,
+                  "ifs_hres": 1.0,
+                  "pangu_hres_init": 1.0
+                },
+                "mean_spearman": 1.0,
+                "models_positive": 3,
+                "passed": true
+              }
+            },
+            "passed": true
+          }
+        },
+        "passed": true,
+        "status": "passed"
+      }
+    }
+  },
+  "prospective_common_strong_success": true,
+  "exact_ladder_note": "The exact preregistered ladder remains primary where its frozen density gate passes; a density failure is not counted as scientific refutation.",
+  "prospective_ladder_note": "Before causal scores were inspected, the 25 km density gate retained 15 MIDAS centres and only 5 INMET centres. At 50 km it retained 71 MIDAS and 37 INMET centres. The 50/100/200 km ladder is therefore a prospective, network-compatible extension and never replaces the exact preregistered 0/25/50/100 km result.",
+  "allowed_claim_if_s1_also_passes": "The causal dependence of model evaluation on reference support generalises from AVAMET to two national observing networks.",
+  "forbidden_claim": "Fully ERA5-independent global confirmation."
+}

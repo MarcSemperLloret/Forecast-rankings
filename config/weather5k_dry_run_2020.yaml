@@ -1,0 +1,50 @@
+pilot_name: "weather5k_t2m_engineering_dry_run_2020"
+analysis_role: "engineering_dry_run_only_not_confirmatory_evidence"
+
+source:
+  dataset: "WEATHER-5K"
+  station_csv_root: "../../Data/sources/weather5k/WEATHER-5K/global_weather_stations"
+  station_index: "../../Data/sources/weather5k/derived/index/weather5k_station_index.csv"
+  file_index: "../../Data/sources/weather5k/derived/index/weather5k_file_index.csv"
+  metadata_json: "../../Data/sources/weather5k/WEATHER-5K/meta_info.json"
+  upstream_repository: "https://github.com/taohan10200/WEATHER-5K"
+  upstream_paper: "https://doi.org/10.48550/arXiv.2406.14399"
+  dataset_license: "CC BY-NC 4.0 (as stated by the WEATHER-5K paper/dataset card)"
+  underlying_source: "NOAA Integrated Surface Database (ISD)"
+
+period:
+  year: 2020
+  cycles_utc: [0, 12]
+  timezone_interpretation: "UTC"
+  expected_cycle_rows_per_complete_station: 732
+
+temperature:
+  source_column: "TMP"
+  source_units: "degC"
+  output_column: "observed_t2m_c"
+  plausible_c: [-90.0, 60.0]
+
+quality_control:
+  # WEATHER-5K stores one flag per variable. TMP is the first variable/flag.
+  require_tmp_mask_value: 1
+  require_time_diff_hours: 0.0
+  rolling_window_reports: 5
+  rolling_min_valid_reports: 3
+  local_median_deviation_c: 4.0
+  min_exact_utc_samples: 650
+  valid_latitude: [-90.0, 90.0]
+  valid_longitude: [-180.0, 180.0]
+  valid_elevation_m: [-500.0, 9000.0]
+
+output:
+  root: "data/interim/weather5k_t2m_dry_run_2020"
+  network: "isd"
+  potentially_assimilated: true
+  parquet_compression: "zstd"
+
+provenance_notes:
+  - "Only TMP rows with the first MASK value equal to 1 are retained."
+  - "Only rows with TIME_DIFF exactly 0 are retained; filled or shifted values are excluded."
+  - "The frozen five-report centred-median QC is applied to exact hourly reports before selecting 00/12 UTC."
+  - "This archive may overlap observations assimilated by reanalyses and is not independent confirmation."
+  - "Use in the primary confirmatory analysis requires an explicit preregistration/provenance decision."

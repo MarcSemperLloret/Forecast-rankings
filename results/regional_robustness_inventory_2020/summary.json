@@ -1,0 +1,9 @@
+{
+  "definition": "One specification is one non-missing comparative reference-effect row in the five frozen regional sensitivity tables; diagnostic signed-bias rows are excluded.",
+  "n_specifications": 344,
+  "n_effect_negative": 344,
+  "n_ci_excludes_zero": 343,
+  "n_ci_contains_zero": 1,
+  "passed_sign_gate": true,
+  "all_intervals_exclude_zero": false
+}

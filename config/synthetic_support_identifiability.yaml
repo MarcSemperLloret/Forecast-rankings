@@ -1,0 +1,80 @@
+analysis_name: "synthetic_support_ranking_identifiability"
+analysis_role: >-
+  Domain-free synthetic control specified after the empirical weather result to
+  characterise the generality of the target-support mechanism. It is not a
+  meteorological confirmation. The true field, the large-scale skill and the
+  fine-scale content of each competing forecast are known by construction, so the
+  experiment isolates when changing only target support reverses a comparative
+  ranking, independently of any physical domain.
+created_local_date: "2026-08-22"
+
+field:
+  # Abstract periodic spatial coordinate on [0, 1); no physical units.
+  grid_points: 1024
+  n_realisations: 730          # analogous to independent "days"; the bootstrap unit
+  n_stations: 256              # fixed sensor locations sampling the field
+  large_scale_wavenumber: 3    # dominant, survives area averaging
+  fine_scale_wavenumber: 40    # small-scale band removed by area averaging
+  fine_scale_bandwidth: 8
+  large_scale_variance: 1.0
+  fine_scale_variance: 0.25
+  measurement_noise_std: 0.02
+  seed: 20260822
+
+# Target support ladder as a fraction of the domain (dimensionless).
+support:
+  radii_fraction: [0.0, 0.005, 0.01, 0.02, 0.04, 0.08, 0.16]
+  weightings: [uniform, gaussian]
+  gaussian_sigma: "radius / 2"
+  metrics: [mae, rmse]
+
+# Experiment 1: three competing forecasts with a known skill/detail trade-off.
+#   forecast = (1 - large_scale_deficit) * true_large + fine_gain * true_fine
+#   sharp  -> correct fine detail, rewarded at a point target, wasted at an area
+#             target -> wins at point support
+#   broad  -> best large-scale skill, no fine detail to be penalised against a
+#             smoothed target -> wins at area support
+#   mid    -> intermediate on both axes
+scorecard_models:
+  sharp:
+    large_scale_deficit: 0.02
+    fine_gain: 1.00
+  mid:
+    large_scale_deficit: 0.06
+    fine_gain: 0.55
+  broad:
+    large_scale_deficit: 0.00
+    fine_gain: 0.00
+  primary_metric: rmse
+
+# Experiment 2: phase diagram of when support reverses a two-model ranking.
+# The sharp model (skill gap d, fine content g) is compared against a fixed
+# broad reference (best large scale, no fine detail).
+phase_diagram:
+  skill_gap_deficit: [0.04, 0.08, 0.12, 0.16, 0.20, 0.26, 0.32, 0.40, 0.48]
+  fine_content_gain: [0.15, 0.30, 0.45, 0.60, 0.72, 0.82, 0.90, 1.00, 1.10]
+  metric: rmse
+  weighting: uniform
+
+uncertainty:
+  unit: "realisation (abstract day)"
+  method: "paired circular moving-block bootstrap"
+  primary_block: 7
+  n_resamples: 2000
+  confidence: 0.95
+  seed: 20260901
+
+outputs:
+  results_root: "results/synthetic_support_identifiability"
+
+interpretation:
+  supported_claim: >-
+    In a controlled setting with a known ground truth and no meteorology,
+    changing only the spatial support of the verifying target reverses a
+    comparative forecast ranking exactly when a model trades large-scale skill
+    for correct fine-scale detail, and the reversal region predicted analytically
+    matches the simulation. This shows the empirically observed weather effect is
+    a general property of support-conditional forecast comparison.
+  limit: >-
+    The simulation demonstrates the mechanism and its parameter dependence; it
+    does not quantify effect sizes for any real forecasting system.

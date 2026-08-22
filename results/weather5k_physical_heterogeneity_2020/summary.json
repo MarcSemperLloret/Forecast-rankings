@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-08-22T05:28:17.774630+00:00",
+  "analysis_role": "pre-specified global physical heterogeneity test",
+  "models": [
+    "ifs_hres",
+    "graphcast_hres_init",
+    "pangu_hres_init"
+  ],
+  "model_reduction": "cell effect calculated per model, then averaged equally across selected models",
+  "support": {
+    "cells": 2529,
+    "spatial_blocks_10deg": 277,
+    "minimum_days_per_model_cell": 328,
+    "maximum_days_per_model_cell": 365
+  },
+  "predicted_covariates": [
+    "absolute_elevation_mismatch_m",
+    "era5_orography_sd_m",
+    "era5_landsea_heterogeneity_100km"
+  ],
+  "descriptive_covariates": [
+    "era5_filtered_subgrid_orography_sd_m",
+    "era5_subgrid_orography_slope",
+    "absolute_latitude_deg",
+    "sites"
+  ],
+  "bootstrap": {
+    "unit": "10-degree latitude-longitude block",
+    "resamples": 2000,
+    "seed": 20260822
+  },
+  "gates": {
+    "negative_spearman_both_metrics_all_three_predicted_covariates": true,
+    "negative_q4_minus_q1_both_metrics_all_three_predicted_covariates": true,
+    "all_predicted_spearman_95ci_below_zero": true,
+    "all_predicted_q4_minus_q1_95ci_below_zero": false
+  },
+  "interpretation_limit": "Physical heterogeneity associations explain where the reference effect is strongest; they are not additional causal model-family replications and WEATHER-5K/ISD may overlap ERA5 assimilation.",
+  "inputs": {
+    "errors": {
+      "path": "results\\weather5k_weatherbench2_metrics_v2_2020\\cell_day_errors.parquet",
+      "sha256": "f1004556538a8de34c385e6df5a4ad1adf65064e27032360a68d1b1a32f96d68"
+    },
+    "covariates": {
+      "path": "data\\interim\\weather5k_physical_covariates_2020\\cell_covariates.csv",
+      "sha256": "c8ba7d72692bcd139e73b02803f86d8c1dc67b6ba019b65a4871a79c6c867679"
+    }
+  }
+}

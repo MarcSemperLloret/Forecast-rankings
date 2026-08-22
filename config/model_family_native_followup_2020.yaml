@@ -1,0 +1,101 @@
+pilot_name: "weather5k_model_family_native_resolution_followup_2020"
+analysis_role: "post_gate_diagnostic_followup_not_confirmatory"
+
+observations:
+  path: "data/interim/weather5k_t2m_dry_run_2020/observations.parquet"
+  manifest: "data/interim/weather5k_t2m_dry_run_2020/manifest.json"
+
+weatherbench2:
+  specification_config: "config/regional_t2m_2020.yaml"
+  cache: "data/raw/weatherbench2_cache"
+  lead_hours: 24
+  reference: "era5_0p25deg"
+  common_grid_degrees: 0.25
+  reference_spec:
+    path: "gs://weatherbench2/datasets/era5/1959-2023_01_10-full_37-1h-0p25deg-chunk-1.zarr"
+    time_name: "time"
+    latitude_name: "latitude"
+    longitude_name: "longitude"
+    t2m_name: "2m_temperature"
+  model_specs:
+    era5_forecast_native:
+      path: "gs://weatherbench2/datasets/era5-forecasts/2020-1440x721.zarr"
+      time_name: "time"
+      lead_name: "prediction_timedelta"
+      latitude_name: "latitude"
+      longitude_name: "longitude"
+      t2m_name: "2m_temperature"
+    graphcast_era5_native:
+      path: "gs://weatherbench2/datasets/graphcast/2020/date_range_2019-11-16_2021-02-01_12_hours_derived.zarr"
+      time_name: "time"
+      lead_name: "prediction_timedelta"
+      latitude_name: "lat"
+      longitude_name: "lon"
+      t2m_name: "2m_temperature"
+    pangu_era5_native:
+      path: "gs://weatherbench2/datasets/pangu/2018-2022_0012_0p25.zarr"
+      time_name: "time"
+      lead_name: "prediction_timedelta"
+      latitude_name: "latitude"
+      longitude_name: "longitude"
+      t2m_name: "2m_temperature"
+    fuxi_native:
+      path: "gs://weatherbench2/datasets/fuxi/2020-1440x721.zarr"
+      time_name: "time"
+      lead_name: "prediction_timedelta"
+      latitude_name: "latitude"
+      longitude_name: "longitude"
+      t2m_name: "2m_temperature"
+    gencast_mean_native:
+      path: "gs://weatherbench2/datasets/gencast/2020-1440x721_mean.zarr"
+      time_name: "time"
+      lead_name: "prediction_timedelta"
+      latitude_name: "lat"
+      longitude_name: "lon"
+      t2m_name: "2m_temperature"
+  sources:
+    - {model: era5_forecast_native, family: ifs, cohort: era5_initialised_deterministic_native}
+    - {model: graphcast_era5_native, family: graphcast, cohort: era5_initialised_deterministic_native}
+    - {model: pangu_era5_native, family: pangu, cohort: era5_initialised_deterministic_native}
+    - {model: fuxi_native, family: fuxi, cohort: era5_initialised_deterministic_native}
+    - {model: gencast_mean_native, family: gencast, cohort: era5_initialised_ensemble_mean_native}
+
+execution:
+  workers: 4
+  output_root: "data/interim/weather5k_model_family_native_followup_2020"
+
+roughness:
+  scales_km: [25, 50, 100]
+  primary_scale_km: 50
+  output_root: "data/interim/weather5k_model_family_native_roughness_2020"
+
+prespecification:
+  frozen_utc: "2026-08-22"
+  trigger: >-
+    The prospective 1.5-degree family extension failed its all-scale
+    roughness gate and preserved the deterministic ranking under both
+    references. This follow-up tests the resulting scale-localisation
+    hypothesis; it was not pre-specified before that failure.
+  hypothesis: >-
+    If the national causal effect is specifically subgrid/local, the positive
+    roughness-to-reference-advantage relation should reappear at 25, 50 and
+    100 km on the native 0.25-degree fields, despite being absent at 600 and
+    reversed at 1200 km after conservative coarsening.
+  primary_models: [era5_forecast_native, graphcast_era5_native, pangu_era5_native, fuxi_native]
+  sensitivity_models: [gencast_mean_native]
+  primary_metrics: [mae, rmse]
+  success_rule: >-
+    Point slopes must be positive for MAE and RMSE at all three local scales;
+    the seven-day bootstrap interval must be positive at the primary 50-km
+    scale. GenCast remains a separately labelled ensemble-mean sensitivity.
+
+interpretation:
+  warning: >-
+    This is a transparent post-gate localisation analysis. A positive result
+    can explain why the coarse common-grid gate failed, but cannot be promoted
+    to an independently pre-specified confirmation or erase the 1.5-degree
+    negative result.
+
+licensing:
+  use: "non-commercial academic research"
+  redistribution: "none; verify dataset-specific terms before public release"

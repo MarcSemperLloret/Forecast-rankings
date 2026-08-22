@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: "Please cite the archived version associated with the manuscript."
+title: "Verification scale reshapes weather-model rankings: reproducibility package"
+type: software
+version: "0.1.0-staging"
+authors:
+  - given-names: "Marc"
+    family-names: "Semper Lloret"
+    email: "marcsemperlloret@gmail.com"
+repository-code: "TO_BE_ASSIGNED"
+abstract: >-
+  Code, frozen derived tables, figure source data and manifests for controlled
+  tests of verification support in weather-model evaluation.

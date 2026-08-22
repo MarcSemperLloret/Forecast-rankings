@@ -1,0 +1,14 @@
+{
+  "analysis_role": "main Figure 3 combining frozen causal support and descriptive scorecard outputs",
+  "inputs": {
+    "results/national_causal_support_2020/s2_support_optima.csv": "516ff2621f07d329f018200d6408f7a246c0996cf1daf7da4971be07083aa00f",
+    "results/national_causal_support_2020/s2_support_thinning.csv": "8456d6ee25c6686727641556a64b3762c53763a88f02c5ecf3ec5ea0f592459b",
+    "results/multisupport_scorecard_2020/scorecard.csv": "343c3ae2a8dfa8ce53ff6b6bbbf05ae9bed0e8f2d91801a0ffb4c9ba1458df26"
+  },
+  "outputs": {
+    "main_figure3_support_and_rankings.png": "b0ea3396525f061a6e61d8b6890f5adf9fc4ad885dc7655610695aa9098bcb22",
+    "main_figure3_support_and_rankings.pdf": "3bd84e2fad0c6b4aca526d2515078deff9769f87bc33496161bbfff8b4289e31",
+    "panels_ab_source_data.csv": "92b3a467b92e7b4300363fd4f5d52a791f23f695f58474eb90916cca6b6e9d82",
+    "panel_c_source_data.csv": "07ec7990bde6662774dce6d6308d5e46cdfebc317cea3e2f05c43b52df9d68ad"
+  }
+}

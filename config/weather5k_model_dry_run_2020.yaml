@@ -1,0 +1,35 @@
+pilot_name: "weather5k_weatherbench2_engineering_dry_run_2020"
+analysis_role: "engineering_dry_run_only_not_confirmatory_evidence"
+
+observations:
+  path: "data/interim/weather5k_t2m_dry_run_2020/observations.parquet"
+  manifest: "data/interim/weather5k_t2m_dry_run_2020/manifest.json"
+
+weatherbench2:
+  specification_config: "config/regional_t2m_2020.yaml"
+  cache: "data/raw/weatherbench2_cache"
+  lead_hours: 24
+  reference: "era5"
+  # These are forecast-source variants, not seven independent model families.
+  # The distinction is retained explicitly so a dry run cannot silently turn
+  # cohort variants into extra statistical degrees of freedom.
+  sources:
+    - {model: ifs_hres, family: ifs, cohort: hres_initialised}
+    - {model: graphcast_hres_init, family: graphcast, cohort: hres_initialised}
+    - {model: pangu_hres_init, family: pangu, cohort: hres_initialised}
+    - {model: era5_forecast, family: ifs_era5_forecast, cohort: era5_initialised}
+    - {model: graphcast_era5, family: graphcast, cohort: era5_initialised}
+    - {model: pangu_era5, family: pangu, cohort: era5_initialised}
+    - {model: ifs_ens_mean, family: ifs_ensemble, cohort: operational_ensemble_mean}
+
+execution:
+  workers: 4
+  output_root: "data/interim/weather5k_weatherbench2_dry_run_2020"
+
+interpretation:
+  independent_source_variants: 7
+  distinct_named_families: 5
+  warning: >-
+    GraphCast and Pangu each occur in two initialisation cohorts, and the IFS
+    deterministic/ensemble variants are related. Source variants must not be
+    treated as independent model units in a confirmatory regression.

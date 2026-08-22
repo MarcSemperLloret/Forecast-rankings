@@ -1,0 +1,249 @@
+{
+  "current": "0a3c71ceba500173f57ef4fd39cc24bba8821453cf394144a5c3b178aa933ffe",
+  "history": [
+    {
+      "frozen_on": "2026-08-17",
+      "reason": "sellado tras cerrar el piloto, antes de la fase global",
+      "sha256": "152ba463c4a8baad181e7077ff81de06b5ee48def55d9d59a7eb87da09124b80",
+      "sections": [
+        "controlled_smoothing",
+        "reference_support_ladder",
+        "field_smoothness",
+        "daily_resolution_degradation",
+        "mechanism_replication",
+        "bootstrap"
+      ],
+      "values": {
+        "controlled_smoothing": {
+          "lead_hours": 24,
+          "sigma_km": [
+            0,
+            12.5,
+            25,
+            50,
+            100
+          ],
+          "models": [
+            "ifs_hres",
+            "graphcast_hres_init",
+            "pangu_hres_init"
+          ],
+          "bootstrap_block_days": [
+            1,
+            3,
+            5,
+            7
+          ]
+        },
+        "reference_support_ladder": {
+          "support_radii_km": [
+            0,
+            25,
+            50,
+            100
+          ],
+          "min_stations_per_support": 3,
+          "projection": "EPSG:25830",
+          "bootstrap_block_days": [
+            1,
+            7
+          ],
+          "weightings": [
+            "uniform",
+            "gaussian"
+          ],
+          "thinning_stations": 3,
+          "thinning_draws": 60
+        },
+        "field_smoothness": {
+          "lead_hours": 24,
+          "domain_padding_deg": 1.0,
+          "scales_km": [
+            25,
+            50,
+            100
+          ],
+          "primary_scale_km": 50,
+          "sources": [
+            "ifs_hres",
+            "graphcast_hres_init",
+            "pangu_hres_init",
+            "era5_forecast",
+            "graphcast_era5",
+            "pangu_era5",
+            "ifs_ens_mean",
+            "era5"
+          ]
+        },
+        "daily_resolution_degradation": {
+          "window_leads_hours": [
+            24,
+            30,
+            36,
+            42
+          ],
+          "init_cycle_utc": 0,
+          "quantities": [
+            "tmax",
+            "tmin"
+          ],
+          "primary_pair": [
+            "graphcast_hres_init",
+            "pangu_hres_init"
+          ],
+          "bootstrap_block_days": [
+            1,
+            3,
+            5,
+            7
+          ]
+        },
+        "mechanism_replication": {
+          "years": [
+            2021,
+            2022
+          ],
+          "models": [
+            "ifs_hres",
+            "pangu_hres_init"
+          ],
+          "lead_hours": 24,
+          "avamet_archive_glob": "../../downbursts-cv-pilot/data/processed/avamet/archive/development/year={year}/*/*.parquet",
+          "pangu_path_template": "gs://weatherbench2/datasets/pangu_hres_init/{year}_0012_0p25.zarr"
+        },
+        "bootstrap": {
+          "unit": "valid_day",
+          "n_resamples": 2000,
+          "seed": 20260815,
+          "ci": 0.95
+        }
+      }
+    },
+    {
+      "frozen_on": "2026-08-17",
+      "reason": "anadida spatial_weighting: la teselacion equiarea es un parametro del analisis confirmatorio y debe quedar sellada",
+      "sha256": "0a3c71ceba500173f57ef4fd39cc24bba8821453cf394144a5c3b178aa933ffe",
+      "sections": [
+        "controlled_smoothing",
+        "reference_support_ladder",
+        "field_smoothness",
+        "daily_resolution_degradation",
+        "mechanism_replication",
+        "spatial_weighting",
+        "bootstrap"
+      ],
+      "values": {
+        "controlled_smoothing": {
+          "lead_hours": 24,
+          "sigma_km": [
+            0,
+            12.5,
+            25,
+            50,
+            100
+          ],
+          "models": [
+            "ifs_hres",
+            "graphcast_hres_init",
+            "pangu_hres_init"
+          ],
+          "bootstrap_block_days": [
+            1,
+            3,
+            5,
+            7
+          ]
+        },
+        "reference_support_ladder": {
+          "support_radii_km": [
+            0,
+            25,
+            50,
+            100
+          ],
+          "min_stations_per_support": 3,
+          "projection": "EPSG:25830",
+          "bootstrap_block_days": [
+            1,
+            7
+          ],
+          "weightings": [
+            "uniform",
+            "gaussian"
+          ],
+          "thinning_stations": 3,
+          "thinning_draws": 60
+        },
+        "field_smoothness": {
+          "lead_hours": 24,
+          "domain_padding_deg": 1.0,
+          "scales_km": [
+            25,
+            50,
+            100
+          ],
+          "primary_scale_km": 50,
+          "sources": [
+            "ifs_hres",
+            "graphcast_hres_init",
+            "pangu_hres_init",
+            "era5_forecast",
+            "graphcast_era5",
+            "pangu_era5",
+            "ifs_ens_mean",
+            "era5"
+          ]
+        },
+        "daily_resolution_degradation": {
+          "window_leads_hours": [
+            24,
+            30,
+            36,
+            42
+          ],
+          "init_cycle_utc": 0,
+          "quantities": [
+            "tmax",
+            "tmin"
+          ],
+          "primary_pair": [
+            "graphcast_hres_init",
+            "pangu_hres_init"
+          ],
+          "bootstrap_block_days": [
+            1,
+            3,
+            5,
+            7
+          ]
+        },
+        "mechanism_replication": {
+          "years": [
+            2021,
+            2022
+          ],
+          "models": [
+            "ifs_hres",
+            "pangu_hres_init"
+          ],
+          "lead_hours": 24,
+          "avamet_archive_glob": "../../downbursts-cv-pilot/data/processed/avamet/archive/development/year={year}/*/*.parquet",
+          "pangu_path_template": "gs://weatherbench2/datasets/pangu_hres_init/{year}_0012_0p25.zarr"
+        },
+        "spatial_weighting": {
+          "tessellation": "equal_area_latitude_bands",
+          "target_cell_km": 100.0,
+          "min_sites_per_cell": 1,
+          "require_common_cells": true,
+          "report_unweighted_station_mean": true
+        },
+        "bootstrap": {
+          "unit": "valid_day",
+          "n_resamples": 2000,
+          "seed": 20260815,
+          "ci": 0.95
+        }
+      }
+    }
+  ]
+}

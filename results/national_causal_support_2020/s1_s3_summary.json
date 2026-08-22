@@ -1,0 +1,202 @@
+{
+  "analysis": "national controlled smoothing S1 and MSE decomposition S3",
+  "created_utc": "2026-08-22T04:32:56.830123+00:00",
+  "networks": {
+    "inmet_hourly": {
+      "metrics": {
+        "mae": {
+          "primary_models_passing": 3,
+          "required": 2,
+          "passed": true
+        },
+        "rmse": {
+          "primary_models_passing": 3,
+          "required": 2,
+          "passed": true
+        }
+      },
+      "passed": true
+    },
+    "midas_open_uk": {
+      "metrics": {
+        "mae": {
+          "primary_models_passing": 3,
+          "required": 2,
+          "passed": true
+        },
+        "rmse": {
+          "primary_models_passing": 3,
+          "required": 2,
+          "passed": true
+        }
+      },
+      "passed": true
+    }
+  },
+  "model_decisions": [
+    {
+      "network": "inmet_hourly",
+      "model": "ifs_hres",
+      "metric": "mae",
+      "era5_optimal_sigma_km": 25.0,
+      "station_optimal_sigma_km": 0.0,
+      "opposite_optima_pass": true,
+      "same_direction_at_every_positive_sigma": false
+    },
+    {
+      "network": "inmet_hourly",
+      "model": "graphcast_hres_init",
+      "metric": "mae",
+      "era5_optimal_sigma_km": 25.0,
+      "station_optimal_sigma_km": 0.0,
+      "opposite_optima_pass": true,
+      "same_direction_at_every_positive_sigma": false
+    },
+    {
+      "network": "inmet_hourly",
+      "model": "pangu_hres_init",
+      "metric": "mae",
+      "era5_optimal_sigma_km": 12.5,
+      "station_optimal_sigma_km": 0.0,
+      "opposite_optima_pass": true,
+      "same_direction_at_every_positive_sigma": false
+    },
+    {
+      "network": "inmet_hourly",
+      "model": "ifs_hres",
+      "metric": "rmse",
+      "era5_optimal_sigma_km": 25.0,
+      "station_optimal_sigma_km": 0.0,
+      "opposite_optima_pass": true,
+      "same_direction_at_every_positive_sigma": false
+    },
+    {
+      "network": "inmet_hourly",
+      "model": "graphcast_hres_init",
+      "metric": "rmse",
+      "era5_optimal_sigma_km": 25.0,
+      "station_optimal_sigma_km": 0.0,
+      "opposite_optima_pass": true,
+      "same_direction_at_every_positive_sigma": false
+    },
+    {
+      "network": "inmet_hourly",
+      "model": "pangu_hres_init",
+      "metric": "rmse",
+      "era5_optimal_sigma_km": 12.5,
+      "station_optimal_sigma_km": 0.0,
+      "opposite_optima_pass": true,
+      "same_direction_at_every_positive_sigma": false
+    },
+    {
+      "network": "midas_open_uk",
+      "model": "ifs_hres",
+      "metric": "mae",
+      "era5_optimal_sigma_km": 25.0,
+      "station_optimal_sigma_km": 0.0,
+      "opposite_optima_pass": true,
+      "same_direction_at_every_positive_sigma": false
+    },
+    {
+      "network": "midas_open_uk",
+      "model": "graphcast_hres_init",
+      "metric": "mae",
+      "era5_optimal_sigma_km": 25.0,
+      "station_optimal_sigma_km": 0.0,
+      "opposite_optima_pass": true,
+      "same_direction_at_every_positive_sigma": false
+    },
+    {
+      "network": "midas_open_uk",
+      "model": "pangu_hres_init",
+      "metric": "mae",
+      "era5_optimal_sigma_km": 12.5,
+      "station_optimal_sigma_km": 0.0,
+      "opposite_optima_pass": true,
+      "same_direction_at_every_positive_sigma": false
+    },
+    {
+      "network": "midas_open_uk",
+      "model": "ifs_hres",
+      "metric": "rmse",
+      "era5_optimal_sigma_km": 25.0,
+      "station_optimal_sigma_km": 0.0,
+      "opposite_optima_pass": true,
+      "same_direction_at_every_positive_sigma": false
+    },
+    {
+      "network": "midas_open_uk",
+      "model": "graphcast_hres_init",
+      "metric": "rmse",
+      "era5_optimal_sigma_km": 12.5,
+      "station_optimal_sigma_km": 0.0,
+      "opposite_optima_pass": true,
+      "same_direction_at_every_positive_sigma": false
+    },
+    {
+      "network": "midas_open_uk",
+      "model": "pangu_hres_init",
+      "metric": "rmse",
+      "era5_optimal_sigma_km": 12.5,
+      "station_optimal_sigma_km": 0.0,
+      "opposite_optima_pass": true,
+      "same_direction_at_every_positive_sigma": false
+    }
+  ],
+  "strong_s1_success": true,
+  "same_direction_violation_any_primary_model_metric": false,
+  "s3_primary_models_variance_dominant": 6,
+  "s3_primary_model_network_tests": 6,
+  "s3_details": [
+    {
+      "network": "inmet_hourly",
+      "model": "ifs_hres",
+      "era5_optimal_sigma_km": 25.0,
+      "bias_squared_change_c2": -0.0018849202505058248,
+      "centred_mse_change_c2": -0.13839488438158942,
+      "variance_component_dominates_improvement": true
+    },
+    {
+      "network": "inmet_hourly",
+      "model": "graphcast_hres_init",
+      "era5_optimal_sigma_km": 25.0,
+      "bias_squared_change_c2": -0.005919012655716113,
+      "centred_mse_change_c2": -0.048808454545677615,
+      "variance_component_dominates_improvement": true
+    },
+    {
+      "network": "inmet_hourly",
+      "model": "pangu_hres_init",
+      "era5_optimal_sigma_km": 12.5,
+      "bias_squared_change_c2": -0.0009504397793022919,
+      "centred_mse_change_c2": -0.010101329467238407,
+      "variance_component_dominates_improvement": true
+    },
+    {
+      "network": "midas_open_uk",
+      "model": "ifs_hres",
+      "era5_optimal_sigma_km": 25.0,
+      "bias_squared_change_c2": -0.033757192668444985,
+      "centred_mse_change_c2": -0.18563088773240666,
+      "variance_component_dominates_improvement": true
+    },
+    {
+      "network": "midas_open_uk",
+      "model": "graphcast_hres_init",
+      "era5_optimal_sigma_km": 12.5,
+      "bias_squared_change_c2": -0.002321825336609684,
+      "centred_mse_change_c2": -0.029269852677376362,
+      "variance_component_dominates_improvement": true
+    },
+    {
+      "network": "midas_open_uk",
+      "model": "pangu_hres_init",
+      "era5_optimal_sigma_km": 12.5,
+      "bias_squared_change_c2": -0.0016224092619451652,
+      "centred_mse_change_c2": -0.010027358008285026,
+      "variance_component_dominates_improvement": true
+    }
+  ],
+  "allowed_claim_if_s2_also_passes": "The causal dependence of model evaluation on reference support generalises from AVAMET to two national observing networks.",
+  "forbidden_claim": "Fully ERA5-independent global confirmation."
+}

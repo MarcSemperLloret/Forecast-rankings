@@ -1,0 +1,32 @@
+pilot_name: "midas_unknown_weatherbench2_sensitivity_2020"
+analysis_role: "national_network_sensitivity_unknown_assimilation_route_not_confirmatory"
+
+observations:
+  path: "data/interim/national_sensitivity/midas_unknown_2020/observations.parquet"
+  manifest: "data/interim/national_sensitivity/midas_unknown_2020/manifest.json"
+
+weatherbench2:
+  specification_config: "config/regional_t2m_2020.yaml"
+  cache: "data/raw/weatherbench2_cache"
+  lead_hours: 24
+  reference: "era5"
+  sources:
+    - {model: ifs_hres, family: ifs, cohort: hres_initialised}
+    - {model: graphcast_hres_init, family: graphcast, cohort: hres_initialised}
+    - {model: pangu_hres_init, family: pangu, cohort: hres_initialised}
+    - {model: era5_forecast, family: ifs_era5_forecast, cohort: era5_initialised}
+    - {model: graphcast_era5, family: graphcast, cohort: era5_initialised}
+    - {model: pangu_era5, family: pangu, cohort: era5_initialised}
+    - {model: ifs_ens_mean, family: ifs_ensemble, cohort: operational_ensemble_mean}
+
+execution:
+  workers: 4
+  output_root: "data/interim/midas_unknown_weatherbench2_2020"
+
+interpretation:
+  independent_source_variants: 7
+  distinct_named_families: 5
+  warning: >-
+    MIDAS sites in this stratum do not overlap Weather5K/ISD and expose no
+    identified operational route, but non-assimilation has not been proven.
+    Model variants are related and are not independent model units.

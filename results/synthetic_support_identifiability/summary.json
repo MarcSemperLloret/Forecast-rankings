@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-08-22T16:45:27.811855+00:00",
+  "analysis_role": "Domain-free synthetic control characterising the generality of the target-support mechanism; not a meteorological confirmation.",
+  "estimand": "Whether varying only the spatial support of the verifying target reverses a comparative forecast ranking, in a setting with a fully known ground truth.",
+  "design": {
+    "grid_points": 1024,
+    "n_realisations": 730,
+    "n_stations": 256,
+    "support_fraction": [
+      0.0,
+      0.005,
+      0.01,
+      0.02,
+      0.04,
+      0.08,
+      0.16
+    ],
+    "weightings": [
+      "uniform",
+      "gaussian"
+    ],
+    "metrics": [
+      "mae",
+      "rmse"
+    ],
+    "bootstrap": "paired circular moving-block bootstrap on realisations",
+    "block": 7,
+    "n_resamples": 2000,
+    "confidence": 0.95,
+    "simultaneous_band": "studentized sup-t within each weighting-metric family"
+  },
+  "scorecard": {
+    "positive_support_scorecards": 24,
+    "winner_changes": 22,
+    "rank_changes": 22,
+    "pairwise_support_shifts": 72,
+    "shifts_with_simultaneous_band_excluding_zero": 72,
+    "point_order_reversals": 58
+  },
+  "forecast_smoothing": {
+    "fraction_of_model_curves_monotone_in_support": 1.0
+  },
+  "phase_diagram": {
+    "cells": 81,
+    "reversals_observed": 73,
+    "analytic_vs_simulation_agreement": 1.0,
+    "analytic_boundary": "reversal expected iff deficit^2 < gain * (2 - gain) * var_fine",
+    "var_fine": 0.25
+  },
+  "band_critical_values": [
+    {
+      "weighting": "uniform",
+      "metric": "mae",
+      "family": "all_support_pairwise_contrasts",
+      "dimensions": 21,
+      "sup_t_critical": 2.6580116873191906
+    },
+    {
+      "weighting": "uniform",
+      "metric": "mae",
+      "family": "positive_support_pairwise_shifts_from_point",
+      "dimensions": 18,
+      "sup_t_critical": 2.455671417914301
+    },
+    {
+      "weighting": "uniform",
+      "metric": "rmse",
+      "family": "all_support_pairwise_contrasts",
+      "dimensions": 21,
+      "sup_t_critical": 2.628855772550338
+    },
+    {
+      "weighting": "uniform",
+      "metric": "rmse",
+      "family": "positive_support_pairwise_shifts_from_point",
+      "dimensions": 18,
+      "sup_t_critical": 2.470851438952076
+    },
+    {
+      "weighting": "gaussian",
+      "metric": "mae",
+      "family": "all_support_pairwise_contrasts",
+      "dimensions": 21,
+      "sup_t_critical": 2.6119888661574184
+    },
+    {
+      "weighting": "gaussian",
+      "metric": "mae",
+      "family": "positive_support_pairwise_shifts_from_point",
+      "dimensions": 18,
+      "sup_t_critical": 2.5182634896349647
+    },
+    {
+      "weighting": "gaussian",
+      "metric": "rmse",
+      "family": "all_support_pairwise_contrasts",
+      "dimensions": 21,
+      "sup_t_critical": 2.6258793118599737
+    },
+    {
+      "weighting": "gaussian",
+      "metric": "rmse",
+      "family": "positive_support_pairwise_shifts_from_point",
+      "dimensions": 18,
+      "sup_t_critical": 2.51069413010394
+    }
+  ],
+  "interpretation_limit": "The simulation demonstrates the mechanism and its parameter dependence; it does not quantify effect sizes for any real forecasting system."
+}

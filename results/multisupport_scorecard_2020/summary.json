@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-08-22T05:41:35.321676+00:00",
+  "analysis_role": "descriptive reusable multi-support benchmark consequence (NG-5)",
+  "definition": "Rank unchanged sigma=0 forecasts against observational references whose spatial support is 0, 50, 100 or 200 km; no model is retuned between supports.",
+  "support": {
+    "networks": 2,
+    "metrics": [
+      "mae",
+      "rmse"
+    ],
+    "weightings": [
+      "gaussian",
+      "uniform"
+    ],
+    "support_km": [
+      0.0,
+      50.0,
+      100.0,
+      200.0
+    ],
+    "models": [
+      "graphcast_hres_init",
+      "ifs_hres",
+      "pangu_hres_init"
+    ]
+  },
+  "gates": {
+    "at_least_one_winner_change_in_each_network": true,
+    "pangu_wins_all_200km_scorecards": false,
+    "point_winner_differs_from_200km_winner_all_scorecards": false,
+    "all_positive_support_rankings_differ_from_point": false
+  },
+  "counts": {
+    "scorecards": 32,
+    "positive_support_scorecards": 24,
+    "winner_changes_positive_support": 12,
+    "rank_changes_positive_support": 22
+  },
+  "interpretation_limit": "Point estimates demonstrate the benchmark consequence. Rank uncertainty is not bootstrapped here; causal support and temporal uncertainty remain in the frozen S1/S2 analyses.",
+  "input": {
+    "path": "results\\national_causal_support_2020\\s2_support_curves.csv",
+    "sha256": "70f0ebfe31b6ea83f8ec30b07505a05f392a2013e86a47fd6aa8240e11ee5e1d"
+  }
+}

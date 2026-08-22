@@ -1,0 +1,922 @@
+starting lead=48 batch=q1; initialisations=182
+lead=48 model=ifs_hres: 1/182
+lead=48 model=ifs_hres: 25/182
+lead=48 model=ifs_hres: 50/182
+lead=48 model=ifs_hres: 75/182
+lead=48 model=ifs_hres: 100/182
+lead=48 model=ifs_hres: 125/182
+lead=48 model=ifs_hres: 150/182
+lead=48 model=ifs_hres: 175/182
+lead=48 model=ifs_hres: 182/182
+lead=48 model=graphcast_hres_init: 1/182
+lead=48 model=graphcast_hres_init: 25/182
+lead=48 model=graphcast_hres_init: 50/182
+lead=48 model=graphcast_hres_init: 75/182
+lead=48 model=graphcast_hres_init: 100/182
+lead=48 model=graphcast_hres_init: 125/182
+lead=48 model=graphcast_hres_init: 150/182
+lead=48 model=graphcast_hres_init: 175/182
+lead=48 model=graphcast_hres_init: 182/182
+lead=48 model=pangu_hres_init: 1/182
+lead=48 model=pangu_hres_init: 25/182
+lead=48 model=pangu_hres_init: 50/182
+lead=48 model=pangu_hres_init: 75/182
+lead=48 model=pangu_hres_init: 100/182
+lead=48 model=pangu_hres_init: 125/182
+lead=48 model=pangu_hres_init: 150/182
+lead=48 model=pangu_hres_init: 175/182
+lead=48 model=pangu_hres_init: 182/182
+lead=48 reference=era5: 1/182
+lead=48 reference=era5: 25/182
+lead=48 reference=era5: 50/182
+lead=48 reference=era5: 75/182
+lead=48 reference=era5: 100/182
+lead=48 reference=era5: 125/182
+lead=48 reference=era5: 150/182
+lead=48 reference=era5: 175/182
+lead=48 reference=era5: 182/182
+{
+  "pilot_name": "regional_t2m_2020",
+  "lead_hours": 48,
+  "batch": "q1",
+  "common_initialisations": 182,
+  "stations": 40,
+  "expected_cases": 7280,
+  "avamet_qc_valid": 7112,
+  "output": "data/interim/lead_time_t2m_2020/lead=048/batches/q1.parquet",
+  "config_sha256": "bb5086ca0f2777b0ef75daea960c981e37707738137c8373a6072b0cda2b72b3",
+  "station_table_sha256": "2e377931cf3f32987bcd9ef5c6c705f243d5fdaacc76ff87e72e7917ef83f2db",
+  "status": "materialised for pre-specified lead-time robustness analysis"
+}
+starting lead=48 batch=q2; initialisations=182
+lead=48 model=ifs_hres: 1/182
+lead=48 model=ifs_hres: 25/182
+lead=48 model=ifs_hres: 50/182
+lead=48 model=ifs_hres: 75/182
+lead=48 model=ifs_hres: 100/182
+lead=48 model=ifs_hres: 125/182
+lead=48 model=ifs_hres: 150/182
+lead=48 model=ifs_hres: 175/182
+lead=48 model=ifs_hres: 182/182
+lead=48 model=graphcast_hres_init: 1/182
+lead=48 model=graphcast_hres_init: 25/182
+lead=48 model=graphcast_hres_init: 50/182
+lead=48 model=graphcast_hres_init: 75/182
+lead=48 model=graphcast_hres_init: 100/182
+lead=48 model=graphcast_hres_init: 125/182
+lead=48 model=graphcast_hres_init: 150/182
+lead=48 model=graphcast_hres_init: 175/182
+lead=48 model=graphcast_hres_init: 182/182
+lead=48 model=pangu_hres_init: 1/182
+lead=48 model=pangu_hres_init: 25/182
+lead=48 model=pangu_hres_init: 50/182
+lead=48 model=pangu_hres_init: 75/182
+lead=48 model=pangu_hres_init: 100/182
+lead=48 model=pangu_hres_init: 125/182
+lead=48 model=pangu_hres_init: 150/182
+lead=48 model=pangu_hres_init: 175/182
+lead=48 model=pangu_hres_init: 182/182
+lead=48 reference=era5: 1/182
+lead=48 reference=era5: 25/182
+lead=48 reference=era5: 50/182
+lead=48 reference=era5: 75/182
+lead=48 reference=era5: 100/182
+lead=48 reference=era5: 125/182
+lead=48 reference=era5: 150/182
+lead=48 reference=era5: 175/182
+lead=48 reference=era5: 182/182
+{
+  "pilot_name": "regional_t2m_2020",
+  "lead_hours": 48,
+  "batch": "q2",
+  "common_initialisations": 182,
+  "stations": 40,
+  "expected_cases": 7280,
+  "avamet_qc_valid": 7162,
+  "output": "data/interim/lead_time_t2m_2020/lead=048/batches/q2.parquet",
+  "config_sha256": "bb5086ca0f2777b0ef75daea960c981e37707738137c8373a6072b0cda2b72b3",
+  "station_table_sha256": "2e377931cf3f32987bcd9ef5c6c705f243d5fdaacc76ff87e72e7917ef83f2db",
+  "status": "materialised for pre-specified lead-time robustness analysis"
+}
+starting lead=48 batch=q3; initialisations=184
+lead=48 model=ifs_hres: 1/184
+lead=48 model=ifs_hres: 25/184
+lead=48 model=ifs_hres: 50/184
+lead=48 model=ifs_hres: 75/184
+lead=48 model=ifs_hres: 100/184
+lead=48 model=ifs_hres: 125/184
+lead=48 model=ifs_hres: 150/184
+lead=48 model=ifs_hres: 175/184
+lead=48 model=ifs_hres: 184/184
+lead=48 model=graphcast_hres_init: 1/184
+lead=48 model=graphcast_hres_init: 25/184
+lead=48 model=graphcast_hres_init: 50/184
+lead=48 model=graphcast_hres_init: 75/184
+lead=48 model=graphcast_hres_init: 100/184
+lead=48 model=graphcast_hres_init: 125/184
+lead=48 model=graphcast_hres_init: 150/184
+lead=48 model=graphcast_hres_init: 175/184
+lead=48 model=graphcast_hres_init: 184/184
+lead=48 model=pangu_hres_init: 1/184
+lead=48 model=pangu_hres_init: 25/184
+lead=48 model=pangu_hres_init: 50/184
+lead=48 model=pangu_hres_init: 75/184
+lead=48 model=pangu_hres_init: 100/184
+lead=48 model=pangu_hres_init: 125/184
+lead=48 model=pangu_hres_init: 150/184
+lead=48 model=pangu_hres_init: 175/184
+lead=48 model=pangu_hres_init: 184/184
+lead=48 reference=era5: 1/184
+lead=48 reference=era5: 25/184
+lead=48 reference=era5: 50/184
+lead=48 reference=era5: 75/184
+lead=48 reference=era5: 100/184
+lead=48 reference=era5: 125/184
+lead=48 reference=era5: 150/184
+lead=48 reference=era5: 175/184
+lead=48 reference=era5: 184/184
+{
+  "pilot_name": "regional_t2m_2020",
+  "lead_hours": 48,
+  "batch": "q3",
+  "common_initialisations": 184,
+  "stations": 40,
+  "expected_cases": 7360,
+  "avamet_qc_valid": 7144,
+  "output": "data/interim/lead_time_t2m_2020/lead=048/batches/q3.parquet",
+  "config_sha256": "bb5086ca0f2777b0ef75daea960c981e37707738137c8373a6072b0cda2b72b3",
+  "station_table_sha256": "2e377931cf3f32987bcd9ef5c6c705f243d5fdaacc76ff87e72e7917ef83f2db",
+  "status": "materialised for pre-specified lead-time robustness analysis"
+}
+starting lead=48 batch=q4; initialisations=184
+lead=48 model=ifs_hres: 1/184
+lead=48 model=ifs_hres: 25/184
+lead=48 model=ifs_hres: 50/184
+lead=48 model=ifs_hres: 75/184
+lead=48 model=ifs_hres: 100/184
+lead=48 model=ifs_hres: 125/184
+lead=48 model=ifs_hres: 150/184
+lead=48 model=ifs_hres: 175/184
+lead=48 model=ifs_hres: 184/184
+lead=48 model=graphcast_hres_init: 1/184
+lead=48 model=graphcast_hres_init: 25/184
+lead=48 model=graphcast_hres_init: 50/184
+lead=48 model=graphcast_hres_init: 75/184
+lead=48 model=graphcast_hres_init: 100/184
+lead=48 model=graphcast_hres_init: 125/184
+lead=48 model=graphcast_hres_init: 150/184
+lead=48 model=graphcast_hres_init: 175/184
+lead=48 model=graphcast_hres_init: 184/184
+lead=48 model=pangu_hres_init: 1/184
+lead=48 model=pangu_hres_init: 25/184
+lead=48 model=pangu_hres_init: 50/184
+lead=48 model=pangu_hres_init: 75/184
+lead=48 model=pangu_hres_init: 100/184
+lead=48 model=pangu_hres_init: 125/184
+lead=48 model=pangu_hres_init: 150/184
+lead=48 model=pangu_hres_init: 175/184
+lead=48 model=pangu_hres_init: 184/184
+lead=48 reference=era5: 1/184
+lead=48 reference=era5: 25/184
+lead=48 reference=era5: 50/184
+lead=48 reference=era5: 75/184
+lead=48 reference=era5: 100/184
+lead=48 reference=era5: 125/184
+lead=48 reference=era5: 150/184
+lead=48 reference=era5: 175/184
+lead=48 reference=era5: 184/184
+{
+  "pilot_name": "regional_t2m_2020",
+  "lead_hours": 48,
+  "batch": "q4",
+  "common_initialisations": 184,
+  "stations": 40,
+  "expected_cases": 7360,
+  "avamet_qc_valid": 6894,
+  "output": "data/interim/lead_time_t2m_2020/lead=048/batches/q4.parquet",
+  "config_sha256": "bb5086ca0f2777b0ef75daea960c981e37707738137c8373a6072b0cda2b72b3",
+  "station_table_sha256": "2e377931cf3f32987bcd9ef5c6c705f243d5fdaacc76ff87e72e7917ef83f2db",
+  "status": "materialised for pre-specified lead-time robustness analysis"
+}
+{
+  "case_count": 29280,
+  "station_count": 40,
+  "initialisation_count": 732,
+  "valid_time_count": 732,
+  "duplicate_case_count": 0,
+  "missing_era5": 0,
+  "avamet_qc_valid": 28312,
+  "missing_ifs_hres": 0,
+  "missing_graphcast_hres_init": 0,
+  "missing_pangu_hres_init": 0,
+  "pilot_name": "regional_t2m_2020",
+  "lead_hours": 48,
+  "batches": [
+    "q1",
+    "q2",
+    "q3",
+    "q4"
+  ],
+  "expected_cases": 29280,
+  "same_case_intersection_both_references": 28312,
+  "output": "data/interim/lead_time_t2m_2020/lead=048/annual.parquet",
+  "status": "consolidated and audited; ready for lead-time robustness analysis"
+}
+starting lead=72 batch=q1; initialisations=182
+lead=72 model=ifs_hres: 1/182
+lead=72 model=ifs_hres: 25/182
+lead=72 model=ifs_hres: 50/182
+lead=72 model=ifs_hres: 75/182
+lead=72 model=ifs_hres: 100/182
+lead=72 model=ifs_hres: 125/182
+lead=72 model=ifs_hres: 150/182
+lead=72 model=ifs_hres: 175/182
+lead=72 model=ifs_hres: 182/182
+lead=72 model=graphcast_hres_init: 1/182
+lead=72 model=graphcast_hres_init: 25/182
+lead=72 model=graphcast_hres_init: 50/182
+lead=72 model=graphcast_hres_init: 75/182
+lead=72 model=graphcast_hres_init: 100/182
+lead=72 model=graphcast_hres_init: 125/182
+lead=72 model=graphcast_hres_init: 150/182
+lead=72 model=graphcast_hres_init: 175/182
+lead=72 model=graphcast_hres_init: 182/182
+lead=72 model=pangu_hres_init: 1/182
+lead=72 model=pangu_hres_init: 25/182
+lead=72 model=pangu_hres_init: 50/182
+lead=72 model=pangu_hres_init: 75/182
+lead=72 model=pangu_hres_init: 100/182
+lead=72 model=pangu_hres_init: 125/182
+lead=72 model=pangu_hres_init: 150/182
+lead=72 model=pangu_hres_init: 175/182
+lead=72 model=pangu_hres_init: 182/182
+lead=72 reference=era5: 1/182
+lead=72 reference=era5: 25/182
+lead=72 reference=era5: 50/182
+lead=72 reference=era5: 75/182
+lead=72 reference=era5: 100/182
+lead=72 reference=era5: 125/182
+lead=72 reference=era5: 150/182
+lead=72 reference=era5: 175/182
+lead=72 reference=era5: 182/182
+{
+  "pilot_name": "regional_t2m_2020",
+  "lead_hours": 72,
+  "batch": "q1",
+  "common_initialisations": 182,
+  "stations": 40,
+  "expected_cases": 7280,
+  "avamet_qc_valid": 7112,
+  "output": "data/interim/lead_time_t2m_2020/lead=072/batches/q1.parquet",
+  "config_sha256": "bb5086ca0f2777b0ef75daea960c981e37707738137c8373a6072b0cda2b72b3",
+  "station_table_sha256": "2e377931cf3f32987bcd9ef5c6c705f243d5fdaacc76ff87e72e7917ef83f2db",
+  "status": "materialised for pre-specified lead-time robustness analysis"
+}
+starting lead=72 batch=q2; initialisations=182
+lead=72 model=ifs_hres: 1/182
+lead=72 model=ifs_hres: 25/182
+lead=72 model=ifs_hres: 50/182
+lead=72 model=ifs_hres: 75/182
+lead=72 model=ifs_hres: 100/182
+lead=72 model=ifs_hres: 125/182
+lead=72 model=ifs_hres: 150/182
+lead=72 model=ifs_hres: 175/182
+lead=72 model=ifs_hres: 182/182
+lead=72 model=graphcast_hres_init: 1/182
+lead=72 model=graphcast_hres_init: 25/182
+lead=72 model=graphcast_hres_init: 50/182
+lead=72 model=graphcast_hres_init: 75/182
+lead=72 model=graphcast_hres_init: 100/182
+lead=72 model=graphcast_hres_init: 125/182
+lead=72 model=graphcast_hres_init: 150/182
+lead=72 model=graphcast_hres_init: 175/182
+lead=72 model=graphcast_hres_init: 182/182
+lead=72 model=pangu_hres_init: 1/182
+lead=72 model=pangu_hres_init: 25/182
+lead=72 model=pangu_hres_init: 50/182
+lead=72 model=pangu_hres_init: 75/182
+lead=72 model=pangu_hres_init: 100/182
+lead=72 model=pangu_hres_init: 125/182
+lead=72 model=pangu_hres_init: 150/182
+lead=72 model=pangu_hres_init: 175/182
+lead=72 model=pangu_hres_init: 182/182
+lead=72 reference=era5: 1/182
+lead=72 reference=era5: 25/182
+lead=72 reference=era5: 50/182
+lead=72 reference=era5: 75/182
+lead=72 reference=era5: 100/182
+lead=72 reference=era5: 125/182
+lead=72 reference=era5: 150/182
+lead=72 reference=era5: 175/182
+lead=72 reference=era5: 182/182
+{
+  "pilot_name": "regional_t2m_2020",
+  "lead_hours": 72,
+  "batch": "q2",
+  "common_initialisations": 182,
+  "stations": 40,
+  "expected_cases": 7280,
+  "avamet_qc_valid": 7160,
+  "output": "data/interim/lead_time_t2m_2020/lead=072/batches/q2.parquet",
+  "config_sha256": "bb5086ca0f2777b0ef75daea960c981e37707738137c8373a6072b0cda2b72b3",
+  "station_table_sha256": "2e377931cf3f32987bcd9ef5c6c705f243d5fdaacc76ff87e72e7917ef83f2db",
+  "status": "materialised for pre-specified lead-time robustness analysis"
+}
+starting lead=72 batch=q3; initialisations=184
+lead=72 model=ifs_hres: 1/184
+lead=72 model=ifs_hres: 25/184
+lead=72 model=ifs_hres: 50/184
+lead=72 model=ifs_hres: 75/184
+lead=72 model=ifs_hres: 100/184
+lead=72 model=ifs_hres: 125/184
+lead=72 model=ifs_hres: 150/184
+lead=72 model=ifs_hres: 175/184
+lead=72 model=ifs_hres: 184/184
+lead=72 model=graphcast_hres_init: 1/184
+lead=72 model=graphcast_hres_init: 25/184
+lead=72 model=graphcast_hres_init: 50/184
+lead=72 model=graphcast_hres_init: 75/184
+lead=72 model=graphcast_hres_init: 100/184
+lead=72 model=graphcast_hres_init: 125/184
+lead=72 model=graphcast_hres_init: 150/184
+lead=72 model=graphcast_hres_init: 175/184
+lead=72 model=graphcast_hres_init: 184/184
+lead=72 model=pangu_hres_init: 1/184
+lead=72 model=pangu_hres_init: 25/184
+lead=72 model=pangu_hres_init: 50/184
+lead=72 model=pangu_hres_init: 75/184
+lead=72 model=pangu_hres_init: 100/184
+lead=72 model=pangu_hres_init: 125/184
+lead=72 model=pangu_hres_init: 150/184
+lead=72 model=pangu_hres_init: 175/184
+lead=72 model=pangu_hres_init: 184/184
+lead=72 reference=era5: 1/184
+lead=72 reference=era5: 25/184
+lead=72 reference=era5: 50/184
+lead=72 reference=era5: 75/184
+lead=72 reference=era5: 100/184
+lead=72 reference=era5: 125/184
+lead=72 reference=era5: 150/184
+lead=72 reference=era5: 175/184
+lead=72 reference=era5: 184/184
+{
+  "pilot_name": "regional_t2m_2020",
+  "lead_hours": 72,
+  "batch": "q3",
+  "common_initialisations": 184,
+  "stations": 40,
+  "expected_cases": 7360,
+  "avamet_qc_valid": 7146,
+  "output": "data/interim/lead_time_t2m_2020/lead=072/batches/q3.parquet",
+  "config_sha256": "bb5086ca0f2777b0ef75daea960c981e37707738137c8373a6072b0cda2b72b3",
+  "station_table_sha256": "2e377931cf3f32987bcd9ef5c6c705f243d5fdaacc76ff87e72e7917ef83f2db",
+  "status": "materialised for pre-specified lead-time robustness analysis"
+}
+starting lead=72 batch=q4; initialisations=184
+lead=72 model=ifs_hres: 1/184
+lead=72 model=ifs_hres: 25/184
+lead=72 model=ifs_hres: 50/184
+lead=72 model=ifs_hres: 75/184
+lead=72 model=ifs_hres: 100/184
+lead=72 model=ifs_hres: 125/184
+lead=72 model=ifs_hres: 150/184
+lead=72 model=ifs_hres: 175/184
+lead=72 model=ifs_hres: 184/184
+lead=72 model=graphcast_hres_init: 1/184
+lead=72 model=graphcast_hres_init: 25/184
+lead=72 model=graphcast_hres_init: 50/184
+lead=72 model=graphcast_hres_init: 75/184
+lead=72 model=graphcast_hres_init: 100/184
+lead=72 model=graphcast_hres_init: 125/184
+lead=72 model=graphcast_hres_init: 150/184
+lead=72 model=graphcast_hres_init: 175/184
+lead=72 model=graphcast_hres_init: 184/184
+lead=72 model=pangu_hres_init: 1/184
+lead=72 model=pangu_hres_init: 25/184
+lead=72 model=pangu_hres_init: 50/184
+lead=72 model=pangu_hres_init: 75/184
+lead=72 model=pangu_hres_init: 100/184
+lead=72 model=pangu_hres_init: 125/184
+lead=72 model=pangu_hres_init: 150/184
+lead=72 model=pangu_hres_init: 175/184
+lead=72 model=pangu_hres_init: 184/184
+lead=72 reference=era5: 1/184
+lead=72 reference=era5: 25/184
+lead=72 reference=era5: 50/184
+lead=72 reference=era5: 75/184
+lead=72 reference=era5: 100/184
+lead=72 reference=era5: 125/184
+lead=72 reference=era5: 150/184
+lead=72 reference=era5: 175/184
+lead=72 reference=era5: 184/184
+{
+  "pilot_name": "regional_t2m_2020",
+  "lead_hours": 72,
+  "batch": "q4",
+  "common_initialisations": 184,
+  "stations": 40,
+  "expected_cases": 7360,
+  "avamet_qc_valid": 6814,
+  "output": "data/interim/lead_time_t2m_2020/lead=072/batches/q4.parquet",
+  "config_sha256": "bb5086ca0f2777b0ef75daea960c981e37707738137c8373a6072b0cda2b72b3",
+  "station_table_sha256": "2e377931cf3f32987bcd9ef5c6c705f243d5fdaacc76ff87e72e7917ef83f2db",
+  "status": "materialised for pre-specified lead-time robustness analysis"
+}
+{
+  "case_count": 29280,
+  "station_count": 40,
+  "initialisation_count": 732,
+  "valid_time_count": 732,
+  "duplicate_case_count": 0,
+  "missing_era5": 0,
+  "avamet_qc_valid": 28232,
+  "missing_ifs_hres": 0,
+  "missing_graphcast_hres_init": 0,
+  "missing_pangu_hres_init": 0,
+  "pilot_name": "regional_t2m_2020",
+  "lead_hours": 72,
+  "batches": [
+    "q1",
+    "q2",
+    "q3",
+    "q4"
+  ],
+  "expected_cases": 29280,
+  "same_case_intersection_both_references": 28232,
+  "output": "data/interim/lead_time_t2m_2020/lead=072/annual.parquet",
+  "status": "consolidated and audited; ready for lead-time robustness analysis"
+}
+starting lead=120 batch=q1; initialisations=182
+lead=120 model=ifs_hres: 1/182
+lead=120 model=ifs_hres: 25/182
+lead=120 model=ifs_hres: 50/182
+lead=120 model=ifs_hres: 75/182
+lead=120 model=ifs_hres: 100/182
+lead=120 model=ifs_hres: 125/182
+lead=120 model=ifs_hres: 150/182
+lead=120 model=ifs_hres: 175/182
+lead=120 model=ifs_hres: 182/182
+lead=120 model=graphcast_hres_init: 1/182
+lead=120 model=graphcast_hres_init: 25/182
+lead=120 model=graphcast_hres_init: 50/182
+lead=120 model=graphcast_hres_init: 75/182
+lead=120 model=graphcast_hres_init: 100/182
+lead=120 model=graphcast_hres_init: 125/182
+lead=120 model=graphcast_hres_init: 150/182
+lead=120 model=graphcast_hres_init: 175/182
+lead=120 model=graphcast_hres_init: 182/182
+lead=120 model=pangu_hres_init: 1/182
+lead=120 model=pangu_hres_init: 25/182
+lead=120 model=pangu_hres_init: 50/182
+lead=120 model=pangu_hres_init: 75/182
+lead=120 model=pangu_hres_init: 100/182
+lead=120 model=pangu_hres_init: 125/182
+lead=120 model=pangu_hres_init: 150/182
+lead=120 model=pangu_hres_init: 175/182
+lead=120 model=pangu_hres_init: 182/182
+lead=120 reference=era5: 1/182
+lead=120 reference=era5: 25/182
+lead=120 reference=era5: 50/182
+lead=120 reference=era5: 75/182
+lead=120 reference=era5: 100/182
+lead=120 reference=era5: 125/182
+lead=120 reference=era5: 150/182
+lead=120 reference=era5: 175/182
+lead=120 reference=era5: 182/182
+{
+  "pilot_name": "regional_t2m_2020",
+  "lead_hours": 120,
+  "batch": "q1",
+  "common_initialisations": 182,
+  "stations": 40,
+  "expected_cases": 7280,
+  "avamet_qc_valid": 7111,
+  "output": "data/interim/lead_time_t2m_2020/lead=120/batches/q1.parquet",
+  "config_sha256": "bb5086ca0f2777b0ef75daea960c981e37707738137c8373a6072b0cda2b72b3",
+  "station_table_sha256": "2e377931cf3f32987bcd9ef5c6c705f243d5fdaacc76ff87e72e7917ef83f2db",
+  "status": "materialised for pre-specified lead-time robustness analysis"
+}
+starting lead=120 batch=q2; initialisations=182
+lead=120 model=ifs_hres: 1/182
+lead=120 model=ifs_hres: 25/182
+lead=120 model=ifs_hres: 50/182
+lead=120 model=ifs_hres: 75/182
+lead=120 model=ifs_hres: 100/182
+lead=120 model=ifs_hres: 125/182
+lead=120 model=ifs_hres: 150/182
+lead=120 model=ifs_hres: 175/182
+lead=120 model=ifs_hres: 182/182
+lead=120 model=graphcast_hres_init: 1/182
+lead=120 model=graphcast_hres_init: 25/182
+lead=120 model=graphcast_hres_init: 50/182
+lead=120 model=graphcast_hres_init: 75/182
+lead=120 model=graphcast_hres_init: 100/182
+lead=120 model=graphcast_hres_init: 125/182
+lead=120 model=graphcast_hres_init: 150/182
+lead=120 model=graphcast_hres_init: 175/182
+lead=120 model=graphcast_hres_init: 182/182
+lead=120 model=pangu_hres_init: 1/182
+lead=120 model=pangu_hres_init: 25/182
+lead=120 model=pangu_hres_init: 50/182
+lead=120 model=pangu_hres_init: 75/182
+lead=120 model=pangu_hres_init: 100/182
+lead=120 model=pangu_hres_init: 125/182
+lead=120 model=pangu_hres_init: 150/182
+lead=120 model=pangu_hres_init: 175/182
+lead=120 model=pangu_hres_init: 182/182
+lead=120 reference=era5: 1/182
+lead=120 reference=era5: 25/182
+lead=120 reference=era5: 50/182
+lead=120 reference=era5: 75/182
+lead=120 reference=era5: 100/182
+lead=120 reference=era5: 125/182
+lead=120 reference=era5: 150/182
+lead=120 reference=era5: 175/182
+lead=120 reference=era5: 182/182
+{
+  "pilot_name": "regional_t2m_2020",
+  "lead_hours": 120,
+  "batch": "q2",
+  "common_initialisations": 182,
+  "stations": 40,
+  "expected_cases": 7280,
+  "avamet_qc_valid": 7151,
+  "output": "data/interim/lead_time_t2m_2020/lead=120/batches/q2.parquet",
+  "config_sha256": "bb5086ca0f2777b0ef75daea960c981e37707738137c8373a6072b0cda2b72b3",
+  "station_table_sha256": "2e377931cf3f32987bcd9ef5c6c705f243d5fdaacc76ff87e72e7917ef83f2db",
+  "status": "materialised for pre-specified lead-time robustness analysis"
+}
+starting lead=120 batch=q3; initialisations=184
+lead=120 model=ifs_hres: 1/184
+lead=120 model=ifs_hres: 25/184
+lead=120 model=ifs_hres: 50/184
+lead=120 model=ifs_hres: 75/184
+lead=120 model=ifs_hres: 100/184
+lead=120 model=ifs_hres: 125/184
+lead=120 model=ifs_hres: 150/184
+lead=120 model=ifs_hres: 175/184
+lead=120 model=ifs_hres: 184/184
+lead=120 model=graphcast_hres_init: 1/184
+lead=120 model=graphcast_hres_init: 25/184
+lead=120 model=graphcast_hres_init: 50/184
+lead=120 model=graphcast_hres_init: 75/184
+lead=120 model=graphcast_hres_init: 100/184
+lead=120 model=graphcast_hres_init: 125/184
+lead=120 model=graphcast_hres_init: 150/184
+lead=120 model=graphcast_hres_init: 175/184
+lead=120 model=graphcast_hres_init: 184/184
+lead=120 model=pangu_hres_init: 1/184
+lead=120 model=pangu_hres_init: 25/184
+lead=120 model=pangu_hres_init: 50/184
+lead=120 model=pangu_hres_init: 75/184
+lead=120 model=pangu_hres_init: 100/184
+lead=120 model=pangu_hres_init: 125/184
+lead=120 model=pangu_hres_init: 150/184
+lead=120 model=pangu_hres_init: 175/184
+lead=120 model=pangu_hres_init: 184/184
+lead=120 reference=era5: 1/184
+lead=120 reference=era5: 25/184
+lead=120 reference=era5: 50/184
+lead=120 reference=era5: 75/184
+lead=120 reference=era5: 100/184
+lead=120 reference=era5: 125/184
+lead=120 reference=era5: 150/184
+lead=120 reference=era5: 175/184
+lead=120 reference=era5: 184/184
+{
+  "pilot_name": "regional_t2m_2020",
+  "lead_hours": 120,
+  "batch": "q3",
+  "common_initialisations": 184,
+  "stations": 40,
+  "expected_cases": 7360,
+  "avamet_qc_valid": 7155,
+  "output": "data/interim/lead_time_t2m_2020/lead=120/batches/q3.parquet",
+  "config_sha256": "bb5086ca0f2777b0ef75daea960c981e37707738137c8373a6072b0cda2b72b3",
+  "station_table_sha256": "2e377931cf3f32987bcd9ef5c6c705f243d5fdaacc76ff87e72e7917ef83f2db",
+  "status": "materialised for pre-specified lead-time robustness analysis"
+}
+starting lead=120 batch=q4; initialisations=184
+lead=120 model=ifs_hres: 1/184
+lead=120 model=ifs_hres: 25/184
+lead=120 model=ifs_hres: 50/184
+lead=120 model=ifs_hres: 75/184
+lead=120 model=ifs_hres: 100/184
+lead=120 model=ifs_hres: 125/184
+lead=120 model=ifs_hres: 150/184
+lead=120 model=ifs_hres: 175/184
+lead=120 model=ifs_hres: 184/184
+lead=120 model=graphcast_hres_init: 1/184
+lead=120 model=graphcast_hres_init: 25/184
+lead=120 model=graphcast_hres_init: 50/184
+lead=120 model=graphcast_hres_init: 75/184
+lead=120 model=graphcast_hres_init: 100/184
+lead=120 model=graphcast_hres_init: 125/184
+lead=120 model=graphcast_hres_init: 150/184
+lead=120 model=graphcast_hres_init: 175/184
+lead=120 model=graphcast_hres_init: 184/184
+lead=120 model=pangu_hres_init: 1/184
+lead=120 model=pangu_hres_init: 25/184
+lead=120 model=pangu_hres_init: 50/184
+lead=120 model=pangu_hres_init: 75/184
+lead=120 model=pangu_hres_init: 100/184
+lead=120 model=pangu_hres_init: 125/184
+lead=120 model=pangu_hres_init: 150/184
+lead=120 model=pangu_hres_init: 175/184
+lead=120 model=pangu_hres_init: 184/184
+lead=120 reference=era5: 1/184
+lead=120 reference=era5: 25/184
+lead=120 reference=era5: 50/184
+lead=120 reference=era5: 75/184
+lead=120 reference=era5: 100/184
+lead=120 reference=era5: 125/184
+lead=120 reference=era5: 150/184
+lead=120 reference=era5: 175/184
+lead=120 reference=era5: 184/184
+{
+  "pilot_name": "regional_t2m_2020",
+  "lead_hours": 120,
+  "batch": "q4",
+  "common_initialisations": 184,
+  "stations": 40,
+  "expected_cases": 7360,
+  "avamet_qc_valid": 6656,
+  "output": "data/interim/lead_time_t2m_2020/lead=120/batches/q4.parquet",
+  "config_sha256": "bb5086ca0f2777b0ef75daea960c981e37707738137c8373a6072b0cda2b72b3",
+  "station_table_sha256": "2e377931cf3f32987bcd9ef5c6c705f243d5fdaacc76ff87e72e7917ef83f2db",
+  "status": "materialised for pre-specified lead-time robustness analysis"
+}
+{
+  "case_count": 29280,
+  "station_count": 40,
+  "initialisation_count": 732,
+  "valid_time_count": 732,
+  "duplicate_case_count": 0,
+  "missing_era5": 0,
+  "avamet_qc_valid": 28073,
+  "missing_ifs_hres": 0,
+  "missing_graphcast_hres_init": 0,
+  "missing_pangu_hres_init": 0,
+  "pilot_name": "regional_t2m_2020",
+  "lead_hours": 120,
+  "batches": [
+    "q1",
+    "q2",
+    "q3",
+    "q4"
+  ],
+  "expected_cases": 29280,
+  "same_case_intersection_both_references": 28073,
+  "output": "data/interim/lead_time_t2m_2020/lead=120/annual.parquet",
+  "status": "consolidated and audited; ready for lead-time robustness analysis"
+}
+starting lead=168 batch=q1; initialisations=182
+lead=168 model=ifs_hres: 1/182
+lead=168 model=ifs_hres: 25/182
+lead=168 model=ifs_hres: 50/182
+lead=168 model=ifs_hres: 75/182
+lead=168 model=ifs_hres: 100/182
+lead=168 model=ifs_hres: 125/182
+lead=168 model=ifs_hres: 150/182
+lead=168 model=ifs_hres: 175/182
+lead=168 model=ifs_hres: 182/182
+lead=168 model=graphcast_hres_init: 1/182
+lead=168 model=graphcast_hres_init: 25/182
+lead=168 model=graphcast_hres_init: 50/182
+lead=168 model=graphcast_hres_init: 75/182
+lead=168 model=graphcast_hres_init: 100/182
+lead=168 model=graphcast_hres_init: 125/182
+lead=168 model=graphcast_hres_init: 150/182
+lead=168 model=graphcast_hres_init: 175/182
+lead=168 model=graphcast_hres_init: 182/182
+lead=168 model=pangu_hres_init: 1/182
+lead=168 model=pangu_hres_init: 25/182
+lead=168 model=pangu_hres_init: 50/182
+lead=168 model=pangu_hres_init: 75/182
+lead=168 model=pangu_hres_init: 100/182
+lead=168 model=pangu_hres_init: 125/182
+lead=168 model=pangu_hres_init: 150/182
+lead=168 model=pangu_hres_init: 175/182
+lead=168 model=pangu_hres_init: 182/182
+lead=168 reference=era5: 1/182
+lead=168 reference=era5: 25/182
+lead=168 reference=era5: 50/182
+lead=168 reference=era5: 75/182
+lead=168 reference=era5: 100/182
+lead=168 reference=era5: 125/182
+lead=168 reference=era5: 150/182
+lead=168 reference=era5: 175/182
+lead=168 reference=era5: 182/182
+{
+  "pilot_name": "regional_t2m_2020",
+  "lead_hours": 168,
+  "batch": "q1",
+  "common_initialisations": 182,
+  "stations": 40,
+  "expected_cases": 7280,
+  "avamet_qc_valid": 7112,
+  "output": "data/interim/lead_time_t2m_2020/lead=168/batches/q1.parquet",
+  "config_sha256": "bb5086ca0f2777b0ef75daea960c981e37707738137c8373a6072b0cda2b72b3",
+  "station_table_sha256": "2e377931cf3f32987bcd9ef5c6c705f243d5fdaacc76ff87e72e7917ef83f2db",
+  "status": "materialised for pre-specified lead-time robustness analysis"
+}
+starting lead=168 batch=q2; initialisations=182
+lead=168 model=ifs_hres: 1/182
+lead=168 model=ifs_hres: 25/182
+lead=168 model=ifs_hres: 50/182
+lead=168 model=ifs_hres: 75/182
+lead=168 model=ifs_hres: 100/182
+lead=168 model=ifs_hres: 125/182
+lead=168 model=ifs_hres: 150/182
+lead=168 model=ifs_hres: 175/182
+lead=168 model=ifs_hres: 182/182
+lead=168 model=graphcast_hres_init: 1/182
+lead=168 model=graphcast_hres_init: 25/182
+lead=168 model=graphcast_hres_init: 50/182
+lead=168 model=graphcast_hres_init: 75/182
+lead=168 model=graphcast_hres_init: 100/182
+lead=168 model=graphcast_hres_init: 125/182
+lead=168 model=graphcast_hres_init: 150/182
+lead=168 model=graphcast_hres_init: 175/182
+lead=168 model=graphcast_hres_init: 182/182
+lead=168 model=pangu_hres_init: 1/182
+lead=168 model=pangu_hres_init: 25/182
+lead=168 model=pangu_hres_init: 50/182
+lead=168 model=pangu_hres_init: 75/182
+lead=168 model=pangu_hres_init: 100/182
+lead=168 model=pangu_hres_init: 125/182
+lead=168 model=pangu_hres_init: 150/182
+lead=168 model=pangu_hres_init: 175/182
+lead=168 model=pangu_hres_init: 182/182
+lead=168 reference=era5: 1/182
+lead=168 reference=era5: 25/182
+lead=168 reference=era5: 50/182
+lead=168 reference=era5: 75/182
+lead=168 reference=era5: 100/182
+lead=168 reference=era5: 125/182
+lead=168 reference=era5: 150/182
+lead=168 reference=era5: 175/182
+lead=168 reference=era5: 182/182
+{
+  "pilot_name": "regional_t2m_2020",
+  "lead_hours": 168,
+  "batch": "q2",
+  "common_initialisations": 182,
+  "stations": 40,
+  "expected_cases": 7280,
+  "avamet_qc_valid": 7153,
+  "output": "data/interim/lead_time_t2m_2020/lead=168/batches/q2.parquet",
+  "config_sha256": "bb5086ca0f2777b0ef75daea960c981e37707738137c8373a6072b0cda2b72b3",
+  "station_table_sha256": "2e377931cf3f32987bcd9ef5c6c705f243d5fdaacc76ff87e72e7917ef83f2db",
+  "status": "materialised for pre-specified lead-time robustness analysis"
+}
+starting lead=168 batch=q3; initialisations=184
+lead=168 model=ifs_hres: 1/184
+lead=168 model=ifs_hres: 25/184
+lead=168 model=ifs_hres: 50/184
+lead=168 model=ifs_hres: 75/184
+lead=168 model=ifs_hres: 100/184
+lead=168 model=ifs_hres: 125/184
+lead=168 model=ifs_hres: 150/184
+lead=168 model=ifs_hres: 175/184
+lead=168 model=ifs_hres: 184/184
+lead=168 model=graphcast_hres_init: 1/184
+lead=168 model=graphcast_hres_init: 25/184
+lead=168 model=graphcast_hres_init: 50/184
+lead=168 model=graphcast_hres_init: 75/184
+lead=168 model=graphcast_hres_init: 100/184
+lead=168 model=graphcast_hres_init: 125/184
+lead=168 model=graphcast_hres_init: 150/184
+lead=168 model=graphcast_hres_init: 175/184
+lead=168 model=graphcast_hres_init: 184/184
+lead=168 model=pangu_hres_init: 1/184
+lead=168 model=pangu_hres_init: 25/184
+lead=168 model=pangu_hres_init: 50/184
+lead=168 model=pangu_hres_init: 75/184
+lead=168 model=pangu_hres_init: 100/184
+lead=168 model=pangu_hres_init: 125/184
+lead=168 model=pangu_hres_init: 150/184
+lead=168 model=pangu_hres_init: 175/184
+lead=168 model=pangu_hres_init: 184/184
+lead=168 reference=era5: 1/184
+lead=168 reference=era5: 25/184
+lead=168 reference=era5: 50/184
+lead=168 reference=era5: 75/184
+lead=168 reference=era5: 100/184
+lead=168 reference=era5: 125/184
+lead=168 reference=era5: 150/184
+lead=168 reference=era5: 175/184
+lead=168 reference=era5: 184/184
+{
+  "pilot_name": "regional_t2m_2020",
+  "lead_hours": 168,
+  "batch": "q3",
+  "common_initialisations": 184,
+  "stations": 40,
+  "expected_cases": 7360,
+  "avamet_qc_valid": 7144,
+  "output": "data/interim/lead_time_t2m_2020/lead=168/batches/q3.parquet",
+  "config_sha256": "bb5086ca0f2777b0ef75daea960c981e37707738137c8373a6072b0cda2b72b3",
+  "station_table_sha256": "2e377931cf3f32987bcd9ef5c6c705f243d5fdaacc76ff87e72e7917ef83f2db",
+  "status": "materialised for pre-specified lead-time robustness analysis"
+}
+starting lead=168 batch=q4; initialisations=184
+lead=168 model=ifs_hres: 1/184
+lead=168 model=ifs_hres: 25/184
+lead=168 model=ifs_hres: 50/184
+lead=168 model=ifs_hres: 75/184
+lead=168 model=ifs_hres: 100/184
+lead=168 model=ifs_hres: 125/184
+lead=168 model=ifs_hres: 150/184
+lead=168 model=ifs_hres: 175/184
+lead=168 model=ifs_hres: 184/184
+lead=168 model=graphcast_hres_init: 1/184
+lead=168 model=graphcast_hres_init: 25/184
+lead=168 model=graphcast_hres_init: 50/184
+lead=168 model=graphcast_hres_init: 75/184
+lead=168 model=graphcast_hres_init: 100/184
+lead=168 model=graphcast_hres_init: 125/184
+lead=168 model=graphcast_hres_init: 150/184
+lead=168 model=graphcast_hres_init: 175/184
+lead=168 model=graphcast_hres_init: 184/184
+lead=168 model=pangu_hres_init: 1/184
+lead=168 model=pangu_hres_init: 25/184
+lead=168 model=pangu_hres_init: 50/184
+lead=168 model=pangu_hres_init: 75/184
+lead=168 model=pangu_hres_init: 100/184
+lead=168 model=pangu_hres_init: 125/184
+lead=168 model=pangu_hres_init: 150/184
+lead=168 model=pangu_hres_init: 175/184
+lead=168 model=pangu_hres_init: 184/184
+lead=168 reference=era5: 1/184
+lead=168 reference=era5: 25/184
+lead=168 reference=era5: 50/184
+lead=168 reference=era5: 75/184
+lead=168 reference=era5: 100/184
+lead=168 reference=era5: 125/184
+lead=168 reference=era5: 150/184
+lead=168 reference=era5: 175/184
+lead=168 reference=era5: 184/184
+{
+  "pilot_name": "regional_t2m_2020",
+  "lead_hours": 168,
+  "batch": "q4",
+  "common_initialisations": 184,
+  "stations": 40,
+  "expected_cases": 7360,
+  "avamet_qc_valid": 6508,
+  "output": "data/interim/lead_time_t2m_2020/lead=168/batches/q4.parquet",
+  "config_sha256": "bb5086ca0f2777b0ef75daea960c981e37707738137c8373a6072b0cda2b72b3",
+  "station_table_sha256": "2e377931cf3f32987bcd9ef5c6c705f243d5fdaacc76ff87e72e7917ef83f2db",
+  "status": "materialised for pre-specified lead-time robustness analysis"
+}
+{
+  "case_count": 29280,
+  "station_count": 40,
+  "initialisation_count": 732,
+  "valid_time_count": 732,
+  "duplicate_case_count": 0,
+  "missing_era5": 0,
+  "avamet_qc_valid": 27917,
+  "missing_ifs_hres": 0,
+  "missing_graphcast_hres_init": 0,
+  "missing_pangu_hres_init": 0,
+  "pilot_name": "regional_t2m_2020",
+  "lead_hours": 168,
+  "batches": [
+    "q1",
+    "q2",
+    "q3",
+    "q4"
+  ],
+  "expected_cases": 29280,
+  "same_case_intersection_both_references": 27917,
+  "output": "data/interim/lead_time_t2m_2020/lead=168/annual.parquet",
+  "status": "consolidated and audited; ready for lead-time robustness analysis"
+}
+analysed lead=24; cases=28392; days=363
+analysed lead=48; cases=28312; days=362
+analysed lead=72; cases=28232; days=361
+analysed lead=120; cases=28073; days=359
+analysed lead=168; cases=27917; days=357
+ lead_h  block_days  n_common_cases  n_daily_blocks       avamet_winner     era5_winner  p_winners_differ                                primary_pair  primary_effect_c  primary_effect_ci_low_c  primary_effect_ci_high_c  primary_pair_reversal_probability
+     24           1           28392             363 graphcast_hres_init pangu_hres_init             1.000 graphcast_hres_init__minus__pangu_hres_init            -0.164                   -0.189                    -0.141                              1.000
+     24           3           28392             363 graphcast_hres_init pangu_hres_init             1.000 graphcast_hres_init__minus__pangu_hres_init            -0.164                   -0.192                    -0.138                              1.000
+     24           5           28392             363 graphcast_hres_init pangu_hres_init             1.000 graphcast_hres_init__minus__pangu_hres_init            -0.164                   -0.195                    -0.135                              1.000
+     24           7           28392             363 graphcast_hres_init pangu_hres_init             0.998 graphcast_hres_init__minus__pangu_hres_init            -0.164                   -0.196                    -0.133                              0.998
+     48           1           28312             362 graphcast_hres_init pangu_hres_init             1.000 graphcast_hres_init__minus__pangu_hres_init            -0.197                   -0.223                    -0.171                              1.000
+     48           3           28312             362 graphcast_hres_init pangu_hres_init             1.000 graphcast_hres_init__minus__pangu_hres_init            -0.197                   -0.228                    -0.165                              1.000
+     48           5           28312             362 graphcast_hres_init pangu_hres_init             1.000 graphcast_hres_init__minus__pangu_hres_init            -0.197                   -0.232                    -0.162                              1.000
+     48           7           28312             362 graphcast_hres_init pangu_hres_init             1.000 graphcast_hres_init__minus__pangu_hres_init            -0.197                   -0.234                    -0.161                              1.000
+     72           1           28232             361 graphcast_hres_init pangu_hres_init             1.000 graphcast_hres_init__minus__pangu_hres_init            -0.193                   -0.219                    -0.166                              1.000
+     72           3           28232             361 graphcast_hres_init pangu_hres_init             1.000 graphcast_hres_init__minus__pangu_hres_init            -0.193                   -0.226                    -0.159                              1.000
+     72           5           28232             361 graphcast_hres_init pangu_hres_init             1.000 graphcast_hres_init__minus__pangu_hres_init            -0.193                   -0.228                    -0.160                              1.000
+     72           7           28232             361 graphcast_hres_init pangu_hres_init             1.000 graphcast_hres_init__minus__pangu_hres_init            -0.193                   -0.229                    -0.157                              1.000
+    120           1           28073             359 graphcast_hres_init pangu_hres_init             0.968 graphcast_hres_init__minus__pangu_hres_init            -0.131                   -0.163                    -0.097                              0.968
+    120           3           28073             359 graphcast_hres_init pangu_hres_init             0.941 graphcast_hres_init__minus__pangu_hres_init            -0.132                   -0.172                    -0.091                              0.941
+    120           5           28073             359 graphcast_hres_init pangu_hres_init             0.941 graphcast_hres_init__minus__pangu_hres_init            -0.132                   -0.173                    -0.091                              0.941
+    120           7           28073             359 graphcast_hres_init pangu_hres_init             0.949 graphcast_hres_init__minus__pangu_hres_init            -0.132                   -0.174                    -0.092                              0.949
+    168           1           27917             357 graphcast_hres_init pangu_hres_init             0.682 graphcast_hres_init__minus__pangu_hres_init            -0.102                   -0.139                    -0.065                              0.682
+    168           3           27917             357 graphcast_hres_init pangu_hres_init             0.641 graphcast_hres_init__minus__pangu_hres_init            -0.102                   -0.147                    -0.059                              0.641
+    168           5           27917             357 graphcast_hres_init pangu_hres_init             0.656 graphcast_hres_init__minus__pangu_hres_init            -0.103                   -0.147                    -0.057                              0.656
+    168           7           27917             357 graphcast_hres_init pangu_hres_init             0.661 graphcast_hres_init__minus__pangu_hres_init            -0.103                   -0.145                    -0.060                              0.660

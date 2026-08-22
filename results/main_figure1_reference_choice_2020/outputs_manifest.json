@@ -1,0 +1,14 @@
+{
+  "analysis_role": "main Figure 1 from frozen AVAMET confirmatory outputs",
+  "inputs": {
+    "results/regional_t2m_2020_scores.csv": "7abb60ba31f47412608b34a702334fe6b1f2b08b65d9fab0e810d5f13185c4d7",
+    "results/regional_t2m_2020_pairwise.csv": "788e94e59faf4530bc75883f845c84a1013e78834e6ca8e07d19f5b175404f5f",
+    "results/regional_t2m_2020_bootstrap_draws.csv": "5c3ab6ceea6cfc71b44d9a1f3f75c4e08f6d8dfa55fd4bb09fbfb6be975ebeaa"
+  },
+  "outputs": {
+    "main_figure1_reference_choice.png": "1665b5ed4c55fccf922f3d155f81ab137798f635d4923f5ea3efb997414e2b5d",
+    "main_figure1_reference_choice.pdf": "497c5060950185cfecb83737286aa4face10e3a152c6123964de7556b6239fcd",
+    "panel_b_source_data.csv": "430a8ef613bbfe3cf4307b929ef8efd42c033bdf299457be3ee1c02e1a6a6588",
+    "panel_c_source_data.csv": "cebb79397b5d8bb5c998b55e25e70ae61ec5ba0dd77d03fa8313c7807834b2ab"
+  }
+}

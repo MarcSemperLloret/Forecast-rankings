@@ -1,0 +1,21 @@
+{
+  "script_sha256": "fd40b00d4cf5bfea6689a9f66f299b20eee69396b69b14abd3089f8f0aa17bb5",
+  "outputs": {
+    "scorecard.csv": {
+      "bytes": 6439,
+      "sha256": "343c3ae2a8dfa8ce53ff6b6bbbf05ae9bed0e8f2d91801a0ffb4c9ba1458df26"
+    },
+    "summary.json": {
+      "bytes": 1552,
+      "sha256": "8d2a67549838494173e7c36d7d9f77a00d2d48f89877490e19ce0e3416784939"
+    },
+    "multisupport_scorecard.png": {
+      "bytes": 475809,
+      "sha256": "423c1f86fafbbbe4b4ba058d9166e5b349252a2e649930031310d0545423dfa1"
+    },
+    "multisupport_scorecard.pdf": {
+      "bytes": 47138,
+      "sha256": "dd3acc1dc5901e4788ae276d633e70aa8eed7df6b783fcfd38690e0d902c1133"
+    }
+  }
+}

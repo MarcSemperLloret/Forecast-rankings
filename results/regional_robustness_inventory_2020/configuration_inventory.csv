@@ -1,0 +1,7 @@
+design,source,n_specifications,n_effect_negative,n_ci_excludes_zero
+lead time,results/lead_time_t2m_2020/hres_multilead_robustness.csv,20,20,20
+spatial strata,results/spatial_t2m_2020/spatial_robustness.csv,72,72,71
+representativeness,results/representativeness_2020/representativeness_robustness.csv,132,132,132
+orography,results/orography_sensitivity_2020/orography_robustness.csv,84,84,84
+metric and uncertainty,results/metric_and_spatial_uncertainty_2020/metric_robustness.csv,36,36,36
+TOTAL,five frozen regional sensitivity tables,344,344,343

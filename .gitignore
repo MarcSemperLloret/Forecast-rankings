@@ -1,0 +1,33 @@
+# Provider-controlled and generated data
+data/
+*.nc
+*.nc4
+*.grib
+*.grib2
+*.zarr/
+*.parquet
+*.zip
+
+# Credentials and local environments
+.env
+.env.*
+*.token
+*credentials*
+.venv*/
+__pycache__/
+*.py[cod]
+
+# Submission-facing and internal editorial material
+manuscript/
+submission/
+cover_letter*
+*desk_reject*
+*claim_traceability*
+*integrity_gate*
+*review_response*
+
+# Local/editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

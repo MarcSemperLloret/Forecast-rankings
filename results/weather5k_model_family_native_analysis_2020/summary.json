@@ -1,0 +1,129 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-08-22T06:10:00.052880+00:00",
+  "analysis_role": "post_gate_diagnostic_followup_not_confirmatory",
+  "config": {
+    "path": "config\\model_family_native_followup_2020.yaml",
+    "sha256": "1b944f55283f98d822cf4c985ca7fe084074a76adadd32ec1afb39e2539c89e0"
+  },
+  "inputs": {
+    "errors": {
+      "path": "results\\weather5k_model_family_native_followup_2020\\cell_day_errors.parquet",
+      "sha256": "dd8916791a86f10e11f7a53e3525730fdfa7b6b3eed22a052c51060e7363a243"
+    },
+    "roughness": {
+      "path": "data\\interim\\weather5k_model_family_native_roughness_2020\\roughness.parquet",
+      "sha256": "0930e9a115f37f2105d3dcc546a6735be9b0db47e0fc692c0fb5ab17d54e8692"
+    }
+  },
+  "support": {
+    "models": 5,
+    "primary_deterministic_families": 4,
+    "cells": 2529,
+    "days": 351,
+    "common_model_cell_days": 885009,
+    "first_day": "2020-01-02",
+    "last_day": "2020-12-17"
+  },
+  "bootstrap": {
+    "unit": "valid day",
+    "circular_block_days": 7,
+    "resamples": 2000,
+    "seed": 20260822,
+    "spatial_weighting": "equal cell after time aggregation within cell"
+  },
+  "primary_scale_km": 50,
+  "slope_results": [
+    {
+      "metric": "mae",
+      "scale_km": 25,
+      "slope_c_per_k": -1.016994707093179,
+      "spearman": -0.7999999999999999,
+      "families": 4,
+      "median": -1.0176122528530716,
+      "ci_low": -1.0912929669580589,
+      "ci_high": -0.9407542140853397,
+      "ci_excludes_zero_positive": false
+    },
+    {
+      "metric": "mae",
+      "scale_km": 50,
+      "slope_c_per_k": -0.5669875122925108,
+      "spearman": -0.7999999999999999,
+      "families": 4,
+      "median": -0.5673104922986224,
+      "ci_low": -0.6109112793098272,
+      "ci_high": -0.5207601601295494,
+      "ci_excludes_zero_positive": false
+    },
+    {
+      "metric": "mae",
+      "scale_km": 100,
+      "slope_c_per_k": -0.4317863981961146,
+      "spearman": -0.7999999999999999,
+      "families": 4,
+      "median": -0.4320991734332431,
+      "ci_low": -0.4662638054301412,
+      "ci_high": -0.39602297842592143,
+      "ci_excludes_zero_positive": false
+    },
+    {
+      "metric": "rmse",
+      "scale_km": 25,
+      "slope_c_per_k": -1.0636948753677504,
+      "spearman": -0.7999999999999999,
+      "families": 4,
+      "median": -1.0635981291404812,
+      "ci_low": -1.2159144464857932,
+      "ci_high": -0.8871595470991167,
+      "ci_excludes_zero_positive": false
+    },
+    {
+      "metric": "rmse",
+      "scale_km": 50,
+      "slope_c_per_k": -0.5812584073019849,
+      "spearman": -0.7999999999999999,
+      "families": 4,
+      "median": -0.5812879466127252,
+      "ci_low": -0.6726353551294086,
+      "ci_high": -0.47601633372241775,
+      "ci_excludes_zero_positive": false
+    },
+    {
+      "metric": "rmse",
+      "scale_km": 100,
+      "slope_c_per_k": -0.4396762758638125,
+      "spearman": -0.7999999999999999,
+      "families": 4,
+      "median": -0.4396119236366186,
+      "ci_low": -0.5110339642724716,
+      "ci_high": -0.35787289987744314,
+      "ci_excludes_zero_positive": false
+    }
+  ],
+  "rank_results": [
+    {
+      "metric": "mae",
+      "spearman_between_reference_rankings": 1.0,
+      "pairwise_rank_reversals": 0,
+      "possible_pairs": 6,
+      "era5_order_best_to_worst": "graphcast_era5_native|fuxi_native|pangu_era5_native|era5_forecast_native",
+      "station_order_best_to_worst": "graphcast_era5_native|fuxi_native|pangu_era5_native|era5_forecast_native"
+    },
+    {
+      "metric": "rmse",
+      "spearman_between_reference_rankings": 1.0,
+      "pairwise_rank_reversals": 0,
+      "possible_pairs": 6,
+      "era5_order_best_to_worst": "graphcast_era5_native|fuxi_native|pangu_era5_native|era5_forecast_native",
+      "station_order_best_to_worst": "graphcast_era5_native|fuxi_native|pangu_era5_native|era5_forecast_native"
+    }
+  ],
+  "gates": {
+    "positive_point_slope_both_metrics_all_scales": false,
+    "primary_95ci_positive_both_metrics": false,
+    "gencast_advantage_direction_not_reversed": true,
+    "prespecified_mechanistic_breadth_supported": false
+  },
+  "interpretation_limit": "This is a transparent post-gate localisation analysis. A positive result can explain why the coarse common-grid gate failed, but cannot be promoted to an independently pre-specified confirmation or erase the 1.5-degree negative result."
+}
