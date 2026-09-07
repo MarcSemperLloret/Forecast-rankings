@@ -1,16 +1,33 @@
 cff-version: 1.2.0
-message: "Please cite the archived version associated with the manuscript."
-title: "Target support reshapes comparative forecast rankings: reproducibility package"
+message: "If you use this package, please cite the archived version below."
+title: "Forecast rankings depend on target support: controlled evidence from weather models — reproducibility package"
 type: software
-version: "0.1.0-staging"
+version: "1.0.0"
+date-released: 2026-09-07
 authors:
   - family-names: Semper
     given-names: Marc
+    affiliation: "Department of Computer Science and Artificial Intelligence, University of Alicante, Spain"
+    email: marc.semper@ua.es
   - family-names: Curado
     given-names: Manuel
+    affiliation: "Department of Computer Science and Artificial Intelligence, University of Alicante, Spain"
   - family-names: Vicent
     given-names: Jose F.
-repository-code: "TO_BE_ASSIGNED"
+    affiliation: "Department of Computer Science and Artificial Intelligence, University of Alicante, Spain"
+doi: 10.5281/zenodo.22638176
+repository-code: "https://github.com/MarcSemperLloret/Forecast-rankings"
+license: MIT
+keywords:
+  - forecast evaluation
+  - forecast comparison
+  - target support
+  - benchmark design
+  - representativeness error
 abstract: >-
   Code, frozen derived tables, figure source data and manifests for controlled
-  tests of verification support in weather-model evaluation.
+  tests of verifying-target support in comparative weather-model evaluation.
+  Includes the forecast-smoothing and observational support-ladder
+  interventions, the multi-support ranking uncertainty analysis, the global
+  physical-heterogeneity association analysis, the negative cross-family
+  roughness test and the self-contained domain-free support-ranking control.

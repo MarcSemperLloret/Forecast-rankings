@@ -1,4 +1,4 @@
-# Target support reshapes comparative forecast rankings
+# Forecast rankings depend on target support: controlled evidence from weather models
 
 This is the journal-safe reproducibility companion for the Paper3 analysis. It
 contains analysis code, frozen derived tables, publication figures and their
@@ -21,7 +21,7 @@ test are retained as bounded extensions.
 - `results/`: selected non-confidential derived tables, summaries, figures, alt text and manifests.
 - `REPRODUCIBILITY.md`: execution routes and expected outputs.
 - `DATA_AVAILABILITY.md`: provider and redistribution constraints.
-- `CHECKSUMS.sha256`: generated only after the staging audit is final.
+- `CHECKSUMS.sha256`: SHA-256 of every tracked file in this release.
 
 ## Rebuild the final displays
 
@@ -49,6 +49,19 @@ python scripts/77_plot_support_ranking_identifiability.py
 
 ## Release status
 
-This directory is a local staging package, not yet a public release. Author
-metadata, an explicit code licence and the versioned archive DOI must be added
-before publication.
+This is the archived reproducibility package for the manuscript *Forecast
+rankings depend on target support: controlled evidence from weather models*.
+
+- Version: 1.0.0
+- Archive DOI: [10.5281/zenodo.22638176](https://doi.org/10.5281/zenodo.22638176)
+- Source repository: <https://github.com/MarcSemperLloret/Forecast-rankings>
+- Licence: MIT for `src/` and `scripts/`; CC BY 4.0 for `results/`, `config/`
+  and the documentation. Provider-controlled observations and forecast archives
+  are not redistributed here and keep their own terms (see
+  `DATA_AVAILABILITY.md`).
+
+Verify the contents against `CHECKSUMS.sha256` before use:
+
+```powershell
+python -c "import hashlib,pathlib; [print(hashlib.sha256(pathlib.Path(l.split('  ',1)[1].strip()).read_bytes()).hexdigest()==l.split('  ',1)[0], l.split('  ',1)[1].strip()) for l in open('CHECKSUMS.sha256',encoding='utf-8')]"
+```

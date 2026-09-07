@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "weather-rank-reference-pilot"
-version = "0.1.0"
-description = "Minimal reproducible pilot for reference-sensitive weather-model rankings"
+version = "1.0.0"
+description = "Reproducibility package for target-support dependence of comparative forecast rankings"
 requires-python = ">=3.11"
 dependencies = [
   "duckdb>=1.1",
