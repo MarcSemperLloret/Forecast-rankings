@@ -1,0 +1,2 @@
+# Byte-stable checkouts so CHECKSUMS.sha256 verifies on every platform.
+* -text
